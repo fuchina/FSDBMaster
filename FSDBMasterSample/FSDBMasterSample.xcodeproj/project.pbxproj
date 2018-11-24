@@ -13,6 +13,7 @@
 		71BA7E1921A9883300CE42AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BA7E1821A9883300CE42AB /* Assets.xcassets */; };
 		71BA7E1C21A9883300CE42AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BA7E1A21A9883300CE42AB /* LaunchScreen.storyboard */; };
 		71BA7E1F21A9883300CE42AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7E1E21A9883300CE42AB /* main.m */; };
+		71BA7E2721A992B400CE42AB /* FSSQLite3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7E2621A992B400CE42AB /* FSSQLite3Controller.m */; };
 		C7EF8338AA89A76DEDEE81EB /* libPods-FSDBMasterSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BE94599E10E483BA947FA5 /* libPods-FSDBMasterSample.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		71BA7E1B21A9883300CE42AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71BA7E1D21A9883300CE42AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71BA7E1E21A9883300CE42AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71BA7E2521A992B400CE42AB /* FSSQLite3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSQLite3Controller.h; sourceTree = SOURCE_ROOT; };
+		71BA7E2621A992B400CE42AB /* FSSQLite3Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSQLite3Controller.m; sourceTree = SOURCE_ROOT; };
 		B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDBMasterSample.release.xcconfig"; path = "Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample.release.xcconfig"; sourceTree = "<group>"; };
 		D5BE94599E10E483BA947FA5 /* libPods-FSDBMasterSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSDBMasterSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -50,7 +53,6 @@
 				27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */,
 				B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +77,8 @@
 		71BA7E0E21A9883200CE42AB /* FSDBMasterSample */ = {
 			isa = PBXGroup;
 			children = (
+				71BA7E2521A992B400CE42AB /* FSSQLite3Controller.h */,
+				71BA7E2621A992B400CE42AB /* FSSQLite3Controller.m */,
 				71BA7E0F21A9883200CE42AB /* AppDelegate.h */,
 				71BA7E1021A9883200CE42AB /* AppDelegate.m */,
 				71BA7E1221A9883200CE42AB /* ViewController.h */,
@@ -194,6 +198,7 @@
 			files = (
 				71BA7E1421A9883200CE42AB /* ViewController.m in Sources */,
 				71BA7E1F21A9883300CE42AB /* main.m in Sources */,
+				71BA7E2721A992B400CE42AB /* FSSQLite3Controller.m in Sources */,
 				71BA7E1121A9883200CE42AB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
