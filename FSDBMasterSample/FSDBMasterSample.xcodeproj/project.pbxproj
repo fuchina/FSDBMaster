@@ -13,9 +13,11 @@
 		71BA7E1921A9883300CE42AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BA7E1821A9883300CE42AB /* Assets.xcassets */; };
 		71BA7E1C21A9883300CE42AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BA7E1A21A9883300CE42AB /* LaunchScreen.storyboard */; };
 		71BA7E1F21A9883300CE42AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7E1E21A9883300CE42AB /* main.m */; };
+		C7EF8338AA89A76DEDEE81EB /* libPods-FSDBMasterSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BE94599E10E483BA947FA5 /* libPods-FSDBMasterSample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDBMasterSample.debug.xcconfig"; path = "Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA7E0C21A9883200CE42AB /* FSDBMasterSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSDBMasterSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BA7E0F21A9883200CE42AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71BA7E1021A9883200CE42AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		71BA7E1B21A9883300CE42AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71BA7E1D21A9883300CE42AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71BA7E1E21A9883300CE42AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDBMasterSample.release.xcconfig"; path = "Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample.release.xcconfig"; sourceTree = "<group>"; };
+		D5BE94599E10E483BA947FA5 /* libPods-FSDBMasterSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSDBMasterSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7EF8338AA89A76DEDEE81EB /* libPods-FSDBMasterSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46E363E4EF09BA8B53D19E0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */,
+				B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		71BA7E0321A9883200CE42AB = {
 			isa = PBXGroup;
 			children = (
 				71BA7E0E21A9883200CE42AB /* FSDBMasterSample */,
 				71BA7E0D21A9883200CE42AB /* Products */,
+				46E363E4EF09BA8B53D19E0F /* Pods */,
+				BB29BF84D57E929DC3D032FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +88,14 @@
 			path = FSDBMasterSample;
 			sourceTree = "<group>";
 		};
+		BB29BF84D57E929DC3D032FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5BE94599E10E483BA947FA5 /* libPods-FSDBMasterSample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71BA7E2221A9883300CE42AB /* Build configuration list for PBXNativeTarget "FSDBMasterSample" */;
 			buildPhases = (
+				7FF96E8A1553300D3A1E8459 /* [CP] Check Pods Manifest.lock */,
 				71BA7E0821A9883200CE42AB /* Sources */,
 				71BA7E0921A9883200CE42AB /* Frameworks */,
 				71BA7E0A21A9883200CE42AB /* Resources */,
@@ -135,6 +161,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FF96E8A1553300D3A1E8459 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FSDBMasterSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71BA7E0821A9883200CE42AB /* Sources */ = {
@@ -283,6 +334,7 @@
 		};
 		71BA7E2321A9883300CE42AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +351,7 @@
 		};
 		71BA7E2421A9883300CE42AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

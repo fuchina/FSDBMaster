@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <FSDBMaster.h>
 
 @interface ViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    FSDBMaster *master = [FSDBMaster sharedInstance];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

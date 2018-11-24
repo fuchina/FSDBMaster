@@ -1,0 +1,16 @@
+PODS:
+  - FSDBMaster (0.0.1)
+
+DEPENDENCIES:
+  - FSDBMaster (from `../`)
+
+EXTERNAL SOURCES:
+  FSDBMaster:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FSDBMaster: 11fe5459459c30a00354577b946977b1b5dee162
+
+PODFILE CHECKSUM: 2c3fc74b0de7d307dc6810a2790689d1fb7960ba
+
+COCOAPODS: 1.6.0.beta.2
