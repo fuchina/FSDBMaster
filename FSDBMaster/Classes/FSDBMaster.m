@@ -8,7 +8,6 @@
 
 #import "FSDBMaster.h"
 #import <sqlite3.h>
-//#import "FSRuntime.h"
 
 @interface FSDBMaster ()
 
@@ -113,7 +112,7 @@ static FSDBMaster *_instance = nil;
     return path;
 }
 
-- (NSString *)createTableIfNotExists:(NSString *)tableName fields:(NSArray<NSString *> *)properties{
+- (NSString *)createTableIfNotExists:(nonnull NSString *)tableName fields:(nonnull NSArray<NSString *> *)properties{
     if (!([properties isKindOfClass:NSArray.class] && properties.count)) {
         return @"fields 为空";
     }
@@ -567,6 +566,59 @@ static NSString     *_field_type = @"field_type";
 
 + (int)sqlite3_threadsafe{
     return sqlite3_threadsafe();
+}
+
+/******************************************************* 二进制存储 ************************************************************/
+
+- (NSString *)insertData:(nonnull NSData *)data table:(nonnull NSString *)table key:(nonnull NSString *)key{
+    if (![data isKindOfClass:NSData.class]) {
+        return @"DATA 数据错误";
+    }
+    if (!([table isKindOfClass:NSString.class] && table.length)) {
+        return @"表名错误";
+    }
+    if (!([key isKindOfClass:NSString.class] && key.length)) {
+        return @"key 不能为空";
+    }
+    
+    table = [self dataTable:table];
+    BOOL exist = [self checkTableExist:table];
+    if (!exist) {   // 创建表
+        NSString *createTable = [[NSString alloc] initWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (aid INTEGER PRIMARY KEY autoincrement,tm TEXT,ky TEXT,dt BLOB);",table];
+        NSString *e = [self execSQL:createTable type:@"创建表"];
+        if (e) {
+            return e;
+        }
+    }
+    
+    dispatch_sync(_queue, ^{
+        sqlite3_stmt *stmt;
+        NSString *iSQL = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (tm,ky,dt) VALUES (?,?,?)",table];
+        const char *sql = [iSQL UTF8String];
+        int result = sqlite3_prepare_v2(self->_sqlite3,sql,(int)strlen(sql),&stmt,0);
+        BOOL isOK = (SQLITE_OK == result);
+        if (isOK) {
+            sqlite3_bind_text(stmt, 1, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(stmt, 2, key.UTF8String, -1, SQLITE_TRANSIENT);
+            sqlite3_bind_blob64(stmt,3,data.bytes, data.length, SQLITE_TRANSIENT);
+
+            int v = sqlite3_step(stmt);
+            if (v == SQLITE_OK) {
+                
+            }
+        }
+        sqlite3_finalize(stmt);stmt = NULL;
+    });
+    return nil;
+}
+
+// 图片的表都加上dt前缀
+- (NSString *)dataTable:(NSString *)table{
+    if ([table isKindOfClass:NSString.class] && table.length) {
+        NSString *nn = [[NSString alloc] initWithFormat:@"dt_%@",table];
+        return nn;
+    }
+    return nil;
 }
 
 @end

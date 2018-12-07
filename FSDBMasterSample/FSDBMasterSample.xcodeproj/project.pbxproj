@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13C1C9C9A57E5C406AB12604 /* Pods-FSDBMasterSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDBMasterSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample.release.xcconfig"; sourceTree = "<group>"; };
 		27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDBMasterSample.debug.xcconfig"; path = "Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample.debug.xcconfig"; sourceTree = "<group>"; };
 		71BA7E0C21A9883200CE42AB /* FSDBMasterSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSDBMasterSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BA7E0F21A9883200CE42AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 			children = (
 				27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */,
 				B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */,
+				13C1C9C9A57E5C406AB12604 /* Pods-FSDBMasterSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,6 +113,8 @@
 				71BA7E0821A9883200CE42AB /* Sources */,
 				71BA7E0921A9883200CE42AB /* Frameworks */,
 				71BA7E0A21A9883200CE42AB /* Resources */,
+				8F66BA46884C3B728B051335 /* [CP] Embed Pods Frameworks */,
+				237E72A8EB304C3FFA12B4EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,26 +171,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7FF96E8A1553300D3A1E8459 /* [CP] Check Pods Manifest.lock */ = {
+		237E72A8EB304C3FFA12B4EC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FF96E8A1553300D3A1E8459 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FSDBMasterSample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F66BA46884C3B728B051335 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSDBMasterSample/Pods-FSDBMasterSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -339,7 +369,6 @@
 		};
 		71BA7E2321A9883300CE42AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27B992B0FCE194443F9F028B /* Pods-FSDBMasterSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,7 +385,7 @@
 		};
 		71BA7E2421A9883300CE42AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B923D06113D3DB5AFFDE9410 /* Pods-FSDBMasterSample.release.xcconfig */;
+			baseConfigurationReference = 13C1C9C9A57E5C406AB12604 /* Pods-FSDBMasterSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
