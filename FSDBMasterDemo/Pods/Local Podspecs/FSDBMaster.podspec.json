@@ -15,9 +15,9 @@
     "git": "https://github.com/fuchina/FSDBMaster.git",
     "tag": "0.0.1"
   },
+  "source_files": "FSDBMaster/Classes/*.{h,m,txt}",
+  "frameworks": "UIKit",
   "platforms": {
-    "ios": "8.0"
-  },
-  "source_files": "FSDBMaster/Classes/*",
-  "frameworks": "UIKit"
+    "ios": "8.2"
+  }
 }

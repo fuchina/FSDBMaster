@@ -159,6 +159,11 @@ static FSDBMaster *_instance = nil;
     return nil;
 }
 
+- (NSString *)insertSQL:(NSString *)sql model:(id<FSDBMasterProtocol>)model table:(NSString *)table{
+    NSArray *fields = model.AllFields;
+    return [self insertSQL:sql fields:fields table:table];
+}
+
 /*
  @"INSERT INTO %@ (time,name,loti,lati) VALUES ('%@','%@','%@','%@');";
  */
@@ -594,8 +599,18 @@ static NSString     *_field_type = @"field_type";
     dispatch_sync(_queue, ^{
         sqlite3_stmt *stmt;
         NSString *iSQL = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (tm,ky,dt) VALUES (?,?,?)",table];
-        const char *sql = [iSQL UTF8String];
-        int result = sqlite3_prepare_v2(self->_sqlite3,sql,(int)strlen(sql),&stmt,0);
+        const char *charSQL = [iSQL UTF8String];
+        int result = sqlite3_prepare_v2(self->_sqlite3,charSQL,-1,&stmt,0);
+        
+        int count = sqlite3_bind_parameter_count(stmt);
+        const char *ont = sqlite3_bind_parameter_name(stmt, 0);
+        const char *two = sqlite3_bind_parameter_name(stmt, 1);
+        const char *thr = sqlite3_bind_parameter_name(stmt, 2);
+        
+        int tmIdx = sqlite3_bind_parameter_index(stmt, [@"tm" UTF8String]);
+        int kyIdx = sqlite3_bind_parameter_index(stmt, [@"ky" UTF8String]);
+        int dtIdx = sqlite3_bind_parameter_index(stmt, [@"dt" UTF8String]);
+        
         BOOL isOK = (SQLITE_OK == result);
         if (isOK) {
             sqlite3_bind_text(stmt, 1, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
@@ -603,8 +618,8 @@ static NSString     *_field_type = @"field_type";
             sqlite3_bind_blob64(stmt,3,data.bytes, data.length, SQLITE_TRANSIENT);
 
             int v = sqlite3_step(stmt);
-            if (v == SQLITE_OK) {
-                
+            if (v == SQLITE_DONE) {
+                // ok
             }
         }
         sqlite3_finalize(stmt);stmt = NULL;

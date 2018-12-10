@@ -11,13 +11,9 @@ Pod::Spec.new do |s|
   s.author           = { 'fudon' => '1245102331@qq.com' }
   s.source           = { :git => 'https://github.com/fuchina/FSDBMaster.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
-  s.source_files = 'FSDBMaster/Classes/*'
-  
-#  s.dependency   'FSCalculator','0.0.1'
-#  s.dependency   'FSWindow','0.0.1'
-#  s.dependency   'FSKit','1.3.1'
+  s.source_files = 'FSDBMaster/Classes/*.{h,m,txt}'
 
   s.frameworks = 'UIKit'
+  s.ios.deployment_target = '8.2'
 
 end
