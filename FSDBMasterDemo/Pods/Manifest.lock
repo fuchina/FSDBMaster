@@ -6,6 +6,10 @@ DEPENDENCIES:
   - FSDBMaster (from `../`)
   - FSKit
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FSKit
+
 EXTERNAL SOURCES:
   FSDBMaster:
     :path: "../"
@@ -16,4 +20,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3dd905c7c4b150a77433241c9a7d2922b791ba96
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.6.0.beta.2

@@ -601,22 +601,14 @@ static NSString     *_field_type = @"field_type";
         NSString *iSQL = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (tm,ky,dt) VALUES (:tm,:ky,:dt)",table];
         const char *charSQL = [iSQL UTF8String];
         int result = sqlite3_prepare_v2(self->_sqlite3,charSQL,-1,&stmt,0);
-        
-        int count = sqlite3_bind_parameter_count(stmt);
-        
-        const char *ont = sqlite3_bind_parameter_name(stmt, 1);
-        const char *two = sqlite3_bind_parameter_name(stmt, 2);
-        const char *thr = sqlite3_bind_parameter_name(stmt, 3);
-        
-        int tmIdx = sqlite3_bind_parameter_index(stmt, ":tm");
-        int kyIdx = sqlite3_bind_parameter_index(stmt, ":ky");
-        int dtIdx = sqlite3_bind_parameter_index(stmt, ":dt");
-        
         BOOL isOK = (SQLITE_OK == result);
         if (isOK) {
-            sqlite3_bind_text(stmt, 1, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
-            sqlite3_bind_text(stmt, 2, key.UTF8String, -1, SQLITE_TRANSIENT);
-            sqlite3_bind_blob64(stmt,3,data.bytes, data.length, SQLITE_TRANSIENT);
+            int tmIdx = sqlite3_bind_parameter_index(stmt, ":tm");
+            int kyIdx = sqlite3_bind_parameter_index(stmt, ":ky");
+            int dtIdx = sqlite3_bind_parameter_index(stmt, ":dt");
+            sqlite3_bind_text(stmt, tmIdx, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(stmt, kyIdx, key.UTF8String, -1, SQLITE_TRANSIENT);
+            sqlite3_bind_blob64(stmt,dtIdx,data.bytes, data.length, SQLITE_TRANSIENT);
             
             int v = sqlite3_step(stmt);
             if (v == SQLITE_DONE) {
@@ -640,7 +632,7 @@ static NSString     *_field_type = @"field_type";
 - (NSString *)errorString:(NSString *)descrition sel:(SEL)sel line:(int)line{
     if (sel && descrition) {
 #if DEBUG || TEST
-        NSString *error = [[NSString alloc] initWithFormat:@"\n%s\n%@\nLine:%d\n%@",__FILE__,NSStringFromSelector(sel),line,descrition];
+        NSString *error = [[NSString alloc] initWithFormat:@"\n%@\n%@\nLine:%d\n%@",self.class,NSStringFromSelector(sel),line,descrition];
         return error;
 #else
         return descrition;
