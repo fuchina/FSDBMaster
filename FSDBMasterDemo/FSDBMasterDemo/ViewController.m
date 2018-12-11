@@ -32,7 +32,7 @@
     
     UIImage *image = [UIImage imageNamed:@"tp.jpg"];
     NSData *data = UIImageJPEGRepresentation(image, 1);
-    NSString *error = [[FSDBMaster sharedInstance] insertData:data table:@"image" key:NSStringFromClass(self.class)];
+    NSString *error = [[FSDBMaster sharedInstance] insertData:nil table:@"image" key:NSStringFromClass(self.class)];
     if (error) {
         NSLog(@"%@",error);
     }

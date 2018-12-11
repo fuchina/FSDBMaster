@@ -577,13 +577,13 @@ static NSString     *_field_type = @"field_type";
 
 - (NSString *)insertData:(nonnull NSData *)data table:(nonnull NSString *)table key:(nonnull NSString *)key{
     if (![data isKindOfClass:NSData.class]) {
-        return @"DATA 数据错误";
+        return [self errorString:@"Data参数错误" sel:_cmd line:__LINE__];
     }
     if (!([table isKindOfClass:NSString.class] && table.length)) {
-        return @"表名错误";
+        return [self errorString:@"表名为空" sel:_cmd line:__LINE__];
     }
     if (!([key isKindOfClass:NSString.class] && key.length)) {
-        return @"key 不能为空";
+        return [self errorString:@"key为空" sel:_cmd line:__LINE__];
     }
     
     table = [self dataTable:table];
@@ -635,6 +635,18 @@ static NSString     *_field_type = @"field_type";
         return nn;
     }
     return nil;
+}
+
+- (NSString *)errorString:(NSString *)descrition sel:(SEL)sel line:(int)line{
+    if (sel && descrition) {
+#if DEBUG || TEST
+        NSString *error = [[NSString alloc] initWithFormat:@"\n%s\n%@\nLine:%d\n%@",__FILE__,NSStringFromSelector(sel),line,descrition];
+        return error;
+#else
+        return descrition;
+#endif
+    }
+    return @"FSDBMaster:unknown error";
 }
 
 @end
