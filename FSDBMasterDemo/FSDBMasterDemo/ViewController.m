@@ -32,9 +32,22 @@
     
     UIImage *image = [UIImage imageNamed:@"tp.jpg"];
     NSData *data = UIImageJPEGRepresentation(image, 1);
-    NSString *error = [[FSDBMaster sharedInstance] insertData:nil table:@"image" key:NSStringFromClass(self.class)];
+    FSDBMaster *master = FSDBMaster.sharedInstance;
+    NSString *error = [master insertData:data table:@"image1" key:NSStringFromClass(self.class)];
     if (error) {
         NSLog(@"%@",error);
+    }
+    
+    NSString *select = @"select * from dt_image1";
+    NSArray *list = [master querySQL:select tableName:@"dt_image1"];
+    for (int x = 0; x < list.count; x ++) {
+        NSDictionary *d = list[x];
+        NSData *data = [d objectForKey:@"dt"];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(100,160 + 50 * x, 50, 50);
+        [self.view addSubview:imageView];
     }
 }
 

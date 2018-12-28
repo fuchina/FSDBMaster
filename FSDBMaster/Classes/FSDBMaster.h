@@ -100,7 +100,15 @@ static NSString *_db_first_name = @"sql_ling";
 //线程安全  iOS是2，2：支持多线程但不支持一个数据库在多线程内，即只支持一个数据库对应一个线程的多线程
 + (int)sqlite3_threadsafe;
 
-// 存储二进制
+
+/*
+ *  存储二进制
+ *  @param data：二进制
+ *  @param table：表名
+ *  @param key：检索字
+ *
+ *  返回值：错误
+ */
 - (NSString *)insertData:(nonnull NSData *)data table:(nonnull NSString *)table key:(nonnull NSString *)key;
 
 @end

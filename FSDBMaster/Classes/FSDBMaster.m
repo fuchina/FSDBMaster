@@ -180,7 +180,7 @@ static FSDBMaster *_instance = nil;
 
 - (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table{
     if (!([table isKindOfClass:NSString.class] && table.length)) {
-        return @"insertSQL : table name is null or non_length";
+        return @"insertSQL : table name's length is zero";
     }
     
     if (!([list isKindOfClass:NSDictionary.class] && list.count)) {
@@ -492,6 +492,10 @@ int checkTableCallBack(void *param, int f_num, char **f_value, char **f_name){
                 str = [[NSString alloc] initWithUTF8String:cValue];// 如果charValue为NULL会Crash
             }
         }else if (cType == SQLITE_BLOB || cType == SQLITE_NULL){
+            const void *bytes = sqlite3_column_blob(stmt, x);
+            if (bytes != NULL) {
+                str = [[NSData alloc] initWithBytes:bytes length:sqlite3_column_bytes(stmt,x)];
+            }
         }else if (cType == SQLITE_INTEGER){
             int cValue = sqlite3_column_int(stmt,x);
             str = @(cValue);
@@ -586,9 +590,14 @@ static NSString     *_field_type = @"field_type";
         return [self errorString:@"key为空" sel:_cmd line:__LINE__];
     }
     
-    table = [self dataTable:table];
     BOOL exist = [self checkTableExist:table];
-    if (!exist) {   // 创建表
+    if (exist) {
+        NSString *sql = [[NSString alloc] initWithFormat:@"select count(*) from %@ where ky = '%@'",table,key];
+        NSInteger count = [self countWithSQL:sql table:table];
+        if (count > 0) {
+            return @"key值已存在";
+        }
+    }else{  // 创建表
         NSString *createTable = [[NSString alloc] initWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (aid INTEGER PRIMARY KEY autoincrement,tm TEXT,ky TEXT,dt BLOB);",table];
         NSString *e = [self execSQL:createTable type:@"创建表"];
         if (e) {
@@ -601,11 +610,26 @@ static NSString     *_field_type = @"field_type";
         NSString *iSQL = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (tm,ky,dt) VALUES (:tm,:ky,:dt)",table];
         const char *charSQL = [iSQL UTF8String];
         int result = sqlite3_prepare_v2(self->_sqlite3,charSQL,-1,&stmt,0);
+<<<<<<< HEAD
         BOOL isOK = (SQLITE_OK == result);
         if (isOK) {
             int tmIdx = sqlite3_bind_parameter_index(stmt, ":tm");
             int kyIdx = sqlite3_bind_parameter_index(stmt, ":ky");
             int dtIdx = sqlite3_bind_parameter_index(stmt, ":dt");
+=======
+        
+//        int count = sqlite3_bind_parameter_count(stmt);
+//        const char *ont = sqlite3_bind_parameter_name(stmt, 1);
+//        const char *two = sqlite3_bind_parameter_name(stmt, 2);
+//        const char *thr = sqlite3_bind_parameter_name(stmt, 3);
+        
+        int tmIdx = sqlite3_bind_parameter_index(stmt, ":tm");
+        int kyIdx = sqlite3_bind_parameter_index(stmt, ":ky");
+        int dtIdx = sqlite3_bind_parameter_index(stmt, ":dt");
+        
+        BOOL isOK = (SQLITE_OK == result);
+        if (isOK) {
+>>>>>>> blob
             sqlite3_bind_text(stmt, tmIdx, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(stmt, kyIdx, key.UTF8String, -1, SQLITE_TRANSIENT);
             sqlite3_bind_blob64(stmt,dtIdx,data.bytes, data.length, SQLITE_TRANSIENT);
@@ -617,15 +641,6 @@ static NSString     *_field_type = @"field_type";
         }
         sqlite3_finalize(stmt);stmt = NULL;
     });
-    return nil;
-}
-
-// 图片的表都加上dt前缀
-- (NSString *)dataTable:(NSString *)table{
-    if ([table isKindOfClass:NSString.class] && table.length) {
-        NSString *nn = [[NSString alloc] initWithFormat:@"dt_%@",table];
-        return nn;
-    }
     return nil;
 }
 
