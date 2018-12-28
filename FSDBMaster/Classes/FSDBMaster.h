@@ -11,13 +11,6 @@
 static NSString *_db_extension = @".db";
 static NSString *_db_first_name = @"sql_ling";
 
-@protocol FSDBMasterProtocol <NSObject>
-
-@required
-- (nonnull NSArray<NSString *> *)tableFields;
-
-@end
-
 @interface FSDBMaster : NSObject
 
 /*
@@ -39,11 +32,10 @@ static NSString *_db_first_name = @"sql_ling";
 
 /*
  新增 eg.
- @"INSERT INTO %@ (time,name,loti,lati) VALUES ('%@','%@','%@','%@');";
+ @"INSERT INTO %@ (a,b,c,d) VALUES ('%@','%@','%@','%@');";
  */
-- (NSString *)insertSQL:(NSString *)sql model:(id<FSDBMasterProtocol>)model table:(NSString *)table;
-- (NSString *)insertSQL:(NSString *)sql fields:(NSArray<NSString *> *)fields table:(NSString *)table;
-- (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table;
+- (NSString *)insertSQL:(NSString *)sql;
+- (NSString *)hi_insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table;
 
 /*
  删除  eg
@@ -55,6 +47,9 @@ static NSString *_db_first_name = @"sql_ling";
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
 - (NSString *)updateWithSQL:(NSString *)sql;
 
+/*
+ *  直接执行SQL语句，type可以为空
+ */
 - (NSString *)execSQL:(NSString *)SQL type:(NSString *)type;
 
 /*

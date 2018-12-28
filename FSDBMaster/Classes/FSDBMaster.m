@@ -159,26 +159,11 @@ static FSDBMaster *_instance = nil;
     return nil;
 }
 
-- (NSString *)insertSQL:(NSString *)sql model:(id<FSDBMasterProtocol>)model table:(NSString *)table{
-    NSArray *fields = model.tableFields;
-    return [self insertSQL:sql fields:fields table:table];
+- (NSString *)insertSQL:(NSString *)sql{
+    return [self execSQL:sql type:@"INSERT DATA"];
 }
 
-/*
- @"INSERT INTO %@ (time,name,loti,lati) VALUES ('%@','%@','%@','%@');";
- */
-- (NSString *)insertSQL:(NSString *)sql fields:(NSArray<NSString *> *)fields table:(NSString *)table{
-    if (!([table isKindOfClass:NSString.class] && table.length)) {
-        return @"表名为空";
-    }
-    NSString *error = [self createTableIfNotExists:table fields:fields];
-    if (error) {
-        return error;
-    }
-    return [self execSQL:sql type:@"新增数据"];
-}
-
-- (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table{
+- (NSString *)hi_insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table{
     if (!([table isKindOfClass:NSString.class] && table.length)) {
         return @"insertSQL : table name's length is zero";
     }
@@ -206,7 +191,7 @@ static FSDBMaster *_instance = nil;
             [whys appendFormat:@",:%@",keys[x]];
         }
     }
-    NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)",table,fies,whys];
+    NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@);",table,fies,whys];
 
     sqlite3_stmt *stmt;
     if (sqlite3_prepare_v2(_sqlite3, insert_sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
