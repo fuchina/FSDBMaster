@@ -38,8 +38,8 @@
         NSLog(@"%@",error);
     }
     
-    NSString *select = @"select * from dt_image1";
-    NSArray *list = [master querySQL:select tableName:@"dt_image1"];
+    NSString *select = @"select * from image1";
+    NSArray *list = [master querySQL:select tableName:@"image1"];
     for (int x = 0; x < list.count; x ++) {
         NSDictionary *d = list[x];
         NSData *data = [d objectForKey:@"dt"];

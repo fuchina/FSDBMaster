@@ -610,13 +610,6 @@ static NSString     *_field_type = @"field_type";
         NSString *iSQL = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (tm,ky,dt) VALUES (:tm,:ky,:dt)",table];
         const char *charSQL = [iSQL UTF8String];
         int result = sqlite3_prepare_v2(self->_sqlite3,charSQL,-1,&stmt,0);
-<<<<<<< HEAD
-        BOOL isOK = (SQLITE_OK == result);
-        if (isOK) {
-            int tmIdx = sqlite3_bind_parameter_index(stmt, ":tm");
-            int kyIdx = sqlite3_bind_parameter_index(stmt, ":ky");
-            int dtIdx = sqlite3_bind_parameter_index(stmt, ":dt");
-=======
         
 //        int count = sqlite3_bind_parameter_count(stmt);
 //        const char *ont = sqlite3_bind_parameter_name(stmt, 1);
@@ -629,7 +622,6 @@ static NSString     *_field_type = @"field_type";
         
         BOOL isOK = (SQLITE_OK == result);
         if (isOK) {
->>>>>>> blob
             sqlite3_bind_text(stmt, tmIdx, @((NSInteger)NSDate.date.timeIntervalSince1970).stringValue.UTF8String, -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(stmt, kyIdx, key.UTF8String, -1, SQLITE_TRANSIENT);
             sqlite3_bind_blob64(stmt,dtIdx,data.bytes, data.length, SQLITE_TRANSIENT);
