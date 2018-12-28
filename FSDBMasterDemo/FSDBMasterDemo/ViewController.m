@@ -27,6 +27,25 @@
 }
 
 - (void)click{
+    [self insertNewFunction];
+}
+
+- (void)insertNewFunction{
+    FSDBMaster *master = FSDBMaster.sharedInstance;
+    NSString *path = master.dbPath;
+    NSLog(@"%@",path);
+    
+    NSString *error = [master insert_fields_values:@{@"a":@"1",@"b":@"10",@"c":@"100"} table:@"kfc"];
+    if (error) {
+        NSLog(@"error：%@",error);
+    }
+    
+    NSString *select = @"select * from kfc";
+    NSArray *list = [master querySQL:select tableName:@"kfc"];
+    NSLog(@"%@",list);
+}
+
+- (void)clickA{
     NSString *path = [FSDBMaster sharedInstance].dbPath;
     NSLog(@"%@",path);
     

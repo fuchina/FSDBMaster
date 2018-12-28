@@ -14,7 +14,7 @@ static NSString *_db_first_name = @"sql_ling";
 @protocol FSDBMasterProtocol <NSObject>
 
 @required
-- (nonnull NSArray<NSString *> *)AllFields;
+- (nonnull NSArray<NSString *> *)tableFields;
 
 @end
 
@@ -43,8 +43,6 @@ static NSString *_db_first_name = @"sql_ling";
  */
 - (NSString *)insertSQL:(NSString *)sql model:(id<FSDBMasterProtocol>)model table:(NSString *)table;
 - (NSString *)insertSQL:(NSString *)sql fields:(NSArray<NSString *> *)fields table:(NSString *)table;
-
-#pragma mark DEVELOPING CANNT FOR USING
 - (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table;
 
 /*

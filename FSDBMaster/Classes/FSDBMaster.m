@@ -160,7 +160,7 @@ static FSDBMaster *_instance = nil;
 }
 
 - (NSString *)insertSQL:(NSString *)sql model:(id<FSDBMasterProtocol>)model table:(NSString *)table{
-    NSArray *fields = model.AllFields;
+    NSArray *fields = model.tableFields;
     return [self insertSQL:sql fields:fields table:table];
 }
 
@@ -190,19 +190,20 @@ static FSDBMaster *_instance = nil;
     NSArray *keys = list.allKeys;
     BOOL isTableExist = [self checkTableExist:table];
     if (!isTableExist) {
-        [self insertSQL:nil fields:keys table:table];
+        NSString *e = [self createTableIfNotExists:table fields:keys];
+        if (e) {
+            return e;
+        }
     }
     
     NSInteger count = keys.count;
     NSMutableString *whys = [[NSMutableString alloc] init];
     NSString *fies = [keys componentsJoinedByString:@","];
-    static NSString *_key_why = @"?";
-    static NSString *_key_why_space = @",?";
     for (int x = 0; x < count; x ++) {
-        if (x) {
-            [whys appendString:_key_why_space];
+        if (x == 0) {
+            [whys appendFormat:@":%@",keys[x]];
         }else{
-            [whys appendString:_key_why];
+            [whys appendFormat:@",:%@",keys[x]];
         }
     }
     NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)",table,fies,whys];
@@ -224,7 +225,7 @@ static FSDBMaster *_instance = nil;
     
     int result = sqlite3_step(stmt);
     if (result != SQLITE_DONE) {
-        sqlite3_finalize(stmt);
+        sqlite3_finalize(stmt);stmt = NULL;
         return @"insertSQL : sqlite3_step(stmt) failed";
     }
     return nil;
