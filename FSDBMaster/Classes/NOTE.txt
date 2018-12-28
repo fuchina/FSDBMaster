@@ -1,3 +1,9 @@
+
+TODO：
+
+https://www.jianshu.com/p/0b9b78e704a4
+
+
 select * from ab_ling where (atype = 'fzp' and cast(arest as REAL) > 0 or (btype = 'fzp' and cast(brest as REAL) > 0));
 直接在电脑上SQLPRO FOR SQLITE修改数据
 
