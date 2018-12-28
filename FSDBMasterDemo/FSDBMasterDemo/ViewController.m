@@ -35,7 +35,7 @@
     NSString *path = master.dbPath;
     NSLog(@"%@",path);
     
-    NSString *error = [master hi_insert_fields_values:@{@"a":@"1",@"b":@"10",@"c":@"100"} table:@"kfc"];
+    NSString *error = [master insert_fields_values:@{@"a":@"1",@"b":@"10",@"c":@"100"} table:@"kfc"];
     if (error) {
         NSLog(@"error：%@",error);
     }

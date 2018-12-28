@@ -35,7 +35,7 @@ static NSString *_db_first_name = @"sql_ling";
  @"INSERT INTO %@ (a,b,c,d) VALUES ('%@','%@','%@','%@');";
  */
 - (NSString *)insertSQL:(NSString *)sql;
-- (NSString *)hi_insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table;
+- (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table;
 
 /*
  删除  eg
@@ -43,14 +43,13 @@ static NSString *_db_first_name = @"sql_ling";
  注意time的值，time是字符串，所以要用''来表示，如果time是字符型数字时加不加''都没关系，但如果time是155555.8888之类时，因为那个小数点导致必须加上''才能找到time
  */
 - (NSString *)deleteSQL:(NSString *)sql;
+- (NSString *)deleteSQL:(NSString *)table aid:(NSNumber *)aid;
 
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
-- (NSString *)updateWithSQL:(NSString *)sql;
+- (NSString *)updateSQL:(NSString *)sql;
 
-/*
- *  直接执行SQL语句，type可以为空
- */
-- (NSString *)execSQL:(NSString *)SQL type:(NSString *)type;
+// 直接执行SQL语句
+- (NSString *)execSQL:(NSString *)sql;
 
 /*
  【SELECT DISTINCT name FROM %@;】// 从%@表中查询name字段的所有不重复的值
