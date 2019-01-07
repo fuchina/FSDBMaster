@@ -258,6 +258,14 @@ static FSDBMaster *_instance = nil;
     return [self execSQL:sql];
 }
 
+- (NSString *)update:(NSDictionary *)dic conditions:(NSDictionary *)conditions table:(NSString *)table{
+    
+    
+    NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"];
+    
+    return nil;
+}
+
 //- (NSString *)update:(NSString *)table keyValues:(NSDictionary *)keyValues{
 //    if (!([table isKindOfClass:NSString.class] && table.length && [keyValues isKindOfClass:NSDictionary.class] && keyValues.count)) {
 //        return @"参数错误";
@@ -271,7 +279,6 @@ static FSDBMaster *_instance = nil;
 //    return nil;
 //}
 
-// 被high_execSQL:方法替代
 - (NSString *)execSQL:(NSString *)SQL type:(NSString *)type{
     if (!([SQL isKindOfClass:NSString.class] && SQL.length)) {
         return @"语句为空";
