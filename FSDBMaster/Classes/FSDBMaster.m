@@ -243,7 +243,7 @@ static FSDBMaster *_instance = nil;
 }
 
 - (NSString *)deleteSQL:(NSString *)table aid:(NSNumber *)aid{
-    if (([table isKindOfClass:NSString.class] && table.length && aid)) {
+    if (!([table isKindOfClass:NSString.class] && table.length && aid)) {
         return @"参数错误";
     }
     NSString *sql = [[NSString alloc] initWithFormat:@"DELETE FROM %@ WHERE aid = %@;",table,aid];
