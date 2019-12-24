@@ -15,32 +15,50 @@
 
 @end
 
-static const char *_sync_queue = "fsdbmaster.sync";
-@implementation FSDBMaster{
+@implementation FSDBMaster {
     dispatch_queue_t    _queue;
 }
 
-static FSDBMaster *_instance = nil;
-
-+(FSDBMaster *)sharedInstance{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [[FSDBMaster alloc] init];
-    });
-    return _instance;
+static     dispatch_queue_t    _initQueue;
++ (void)load {
+    _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
 }
 
-+ (FSDBMaster *)sharedInstanceWithDBName:(NSString *)dbName{
-    FSDBMaster *master = [self sharedInstance];
-    [master generateHandlerWithDBName:dbName];
+- (void)dealloc {
+#if DEBUG
+    NSLog(@"FSDBMaster dealloc");
+#endif
+    if (_sqlite3) {
+        int result = sqlite3_close(_sqlite3);
+        NSAssert(result == 0, @"数据库关闭失败");
+        _sqlite3 = NULL;
+    }
+}
+
++ (FSDBMaster *)openSQLite3:(NSString *)path {
+    NSAssert([path isKindOfClass:NSString.class] && path.length, @"数据库文件路径不合法");
+    FSDBMaster *master = [[FSDBMaster alloc] initWithSQLite3FilePath:path];
     return master;
 }
 
-- (instancetype)init{
++ (FSDBMaster *_Nullable)openSQLite3{
+    return [self openSQLite3:[self dbPath]];
+}
+
+- (instancetype)initWithSQLite3FilePath:(NSString *)path {
     self = [super init];
     if (self) {
-        _queue = dispatch_queue_create(_sync_queue, DISPATCH_QUEUE_SERIAL);
-        [self generateHandlerWithDBName:_db_first_name];
+        NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
+        _queue = _initQueue;
+        BOOL open = [self openSqlite3DatabaseAtPath:path];
+        if (!open) {
+            NSAssert(open == YES, @"打开数据库失败");
+        }
+        
+#if DEBUG
+        NSInteger mode = [FSDBMaster sqlite3_threadsafe];
+        NSAssert(mode == 2, @"SQLite3线程模式不是2了？");
+#endif
     }
     return self;
 }
@@ -73,36 +91,12 @@ static FSDBMaster *_instance = nil;
     return openDatabaseSuccess;
 }
 
-- (void)generateHandlerWithDBName:(NSString *)dbName{
-    if (!([dbName isKindOfClass:NSString.class] && dbName.length)) {
-        return;
-    }
-    
-    NSString *currentDBPath = [self dbPath];
-    NSString *currentDBName = [currentDBPath lastPathComponent];
-    NSString *nowDBName = [[NSString alloc] initWithFormat:@"%@%@",dbName,_db_extension];
-    if ([currentDBName isEqualToString:nowDBName] && _sqlite3 != NULL) {
-        return;
-    }
-    
-    NSString *dbPath = [self dbPathWithFileName:dbName];
-    int openResult = sqlite3_open([dbPath UTF8String], &_sqlite3);
-    if (openResult != SQLITE_OK) {
-        sqlite3_close(_sqlite3);
-        _sqlite3 = NULL;
-    }else{
-        int result = sqlite3_exec(_sqlite3, "PRAGMA synchronous=FULL;", NULL, NULL, NULL);
-        if (result != SQLITE_OK) {
-        }
-    }
-}
-
-- (NSString *)dbPath{// 数据库只能放在Documents目录下
++ (NSString *)dbPath{// 数据库只能放在Documents目录下
     return [self dbPathWithFileName:_db_first_name];
 }
 
 // param: 不需要带扩展名
-- (NSString *)dbPathWithFileName:(NSString *)name{
++ (NSString *)dbPathWithFileName:(NSString *)name{
     if (!([name isKindOfClass:NSString.class] && name.length)) {
         return nil;
     }
@@ -259,10 +253,6 @@ static FSDBMaster *_instance = nil;
 }
 
 - (NSString *)update:(NSDictionary *)dic conditions:(NSDictionary *)conditions table:(NSString *)table{
-    
-    
-    NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"];
-    
     return nil;
 }
 
