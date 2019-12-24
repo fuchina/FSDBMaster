@@ -20,9 +20,6 @@
 }
 
 static     dispatch_queue_t    _initQueue;
-+ (void)load {
-    _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
-}
 
 - (void)dealloc {
 #if DEBUG
@@ -30,7 +27,8 @@ static     dispatch_queue_t    _initQueue;
 #endif
     if (_sqlite3) {
         int result = sqlite3_close(_sqlite3);
-        NSAssert(result == 0, @"数据库关闭失败");
+        // 有可能后一个操作又打开了同一个数据库，导致关闭失败
+//        NSAssert(result == 0, @"数据库关闭失败");
         _sqlite3 = NULL;
     }
 }
@@ -41,18 +39,25 @@ static     dispatch_queue_t    _initQueue;
     return master;
 }
 
+static     FSDBMaster          *_defaultMaster;
 + (FSDBMaster *_Nullable)openSQLite3{
-    return [self openSQLite3:[self dbPath]];
+    if (!_defaultMaster) {
+        _defaultMaster = [self openSQLite3:[self dbPath]];
+    }
+    return _defaultMaster;
 }
 
 - (instancetype)initWithSQLite3FilePath:(NSString *)path {
     self = [super init];
     if (self) {
         NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
+        if (_initQueue == NULL) {
+            _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
+        }
         _queue = _initQueue;
         BOOL open = [self openSqlite3DatabaseAtPath:path];
         if (!open) {
-            NSAssert(open == YES, @"打开数据库失败");
+//            NSAssert(open == YES, @"打开数据库失败");
         }
         
 #if DEBUG
