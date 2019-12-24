@@ -50,15 +50,17 @@ static     FSDBMaster          *_defaultMaster;
 - (instancetype)initWithSQLite3FilePath:(NSString *)path {
     self = [super init];
     if (self) {
-        NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
         if (_initQueue == NULL) {
             _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
         }
+        NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
         _queue = _initQueue;
-        BOOL open = [self openSqlite3DatabaseAtPath:path];
-        if (!open) {
-//            NSAssert(open == YES, @"打开数据库失败");
-        }
+        dispatch_sync(_queue, ^{
+            BOOL open = [self openSqlite3DatabaseAtPath:path];
+            if (!open) {
+    //            NSAssert(open == YES, @"打开数据库失败");
+            }
+        });
         
 #if DEBUG
         NSInteger mode = [FSDBMaster sqlite3_threadsafe];
