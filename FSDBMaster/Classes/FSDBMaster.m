@@ -33,32 +33,35 @@ static     dispatch_queue_t    _initQueue;
     }
 }
 
+static  FSDBMaster *_defaultMaster;
 + (FSDBMaster *)openSQLite3:(NSString *)path {
     NSAssert([path isKindOfClass:NSString.class] && path.length, @"数据库文件路径不合法");
-    FSDBMaster *master = [[FSDBMaster alloc] initWithSQLite3FilePath:path];
-    return master;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
+        if (!_defaultMaster) {
+            _defaultMaster = [[FSDBMaster alloc] initWithSQLite3FilePath:[self dbPath]];
+        }
+    });
+    if ([[self dbPath] isEqualToString:path]) {
+        return _defaultMaster;
+    }
+    return [[FSDBMaster alloc] initWithSQLite3FilePath:path];
 }
 
-static     FSDBMaster          *_defaultMaster;
 + (FSDBMaster *_Nullable)openSQLite3{
-    if (!_defaultMaster) {
-        _defaultMaster = [self openSQLite3:[self dbPath]];
-    }
-    return _defaultMaster;
+    return [self openSQLite3:self.dbPath];
 }
 
 - (instancetype)initWithSQLite3FilePath:(NSString *)path {
     self = [super init];
     if (self) {
-        if (_initQueue == NULL) {
-            _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
-        }
         NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
         _queue = _initQueue;
         dispatch_sync(_queue, ^{
             BOOL open = [self openSqlite3DatabaseAtPath:path];
             if (!open) {
-    //            NSAssert(open == YES, @"打开数据库失败");
+                NSAssert(open == YES, @"打开数据库失败");
             }
         });
         
@@ -74,11 +77,11 @@ static     FSDBMaster          *_defaultMaster;
     if (!([path isKindOfClass:NSString.class] && path.length)) {
         return NO;
     }
-    NSFileManager *manager = [NSFileManager defaultManager];
-    BOOL fileExist = [manager fileExistsAtPath:path];
-    if (!fileExist) {
-        return NO;
-    }
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    BOOL fileExist = [manager fileExistsAtPath:path];
+//    if (!fileExist) {
+//        return NO;
+//    }
     if (_sqlite3) {
         sqlite3_close(_sqlite3);
         _sqlite3 = NULL;
@@ -99,7 +102,11 @@ static     FSDBMaster          *_defaultMaster;
 }
 
 + (NSString *)dbPath{// 数据库只能放在Documents目录下
-    return [self dbPathWithFileName:_db_first_name];
+    static NSString *path = nil;
+    if (!path) {
+        path = [self dbPathWithFileName:_db_first_name];
+    }
+    return path;
 }
 
 // param: 不需要带扩展名

@@ -7,121 +7,121 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		073562167C1FACF1939FE8A8ED3A104B /* FSURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D5F4F0825BA3EEBD0DE430E8D23A80 /* FSURLSession.m */; };
-		0AD8BAAD3D195DE9C1592B4215E91CC1 /* FSDBMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = A548B2C4B414C6B8D8EBEE1D16FB3E16 /* FSDBMaster.m */; };
-		178CA9C3741ABCFC37BC4C5A90578644 /* FSAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D052D0EEB6BE5FBAD8C7160BDF3B23 /* FSAlgorithm.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		231B754C7CE6401AABF9EF82975FCC8E /* FSHook.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D2B7ADBB1EA7128480B933530E4F18 /* FSHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		263A61513DCDB7ADCEFDD0ED68F5EE82 /* FSLocalNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 879991AA0C5B73A6DB162DFAE24F15CC /* FSLocalNotification.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2FDC31E7A0158E2CE02C12655F79FB19 /* FSPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 3758267329455F90C37060032D4E6F3C /* FSPdf.m */; };
-		32FF3CC2D1B0F9DAE942ED9488BBC11C /* FSKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13813AECC38F5DBF504C8BBEAC3A6A46 /* FSKit-dummy.m */; };
-		3C99D398D6C948F4EE55EC46CAF8517D /* FSEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB6C497DFB3D0D3A46139EB57F1E10F /* FSEntity.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3FBE016D859A5D04DBFDA15F40A3D74A /* Pods-FSDBMasterDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5AAF9A98F2CDBEC1BDC1B75D2A83B /* Pods-FSDBMasterDemo-dummy.m */; };
-		422A0B8C660C3ED83E2F8AFE05C0AE00 /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 710278E0F38FDB7D672A9D3E1144CD5A /* FSKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4ED2663083FD9A18C13184A1C13F5C69 /* FSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = C14971E92EBFFD8D33F486572EDC9FCE /* FSDate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		689950B6761D2D7401DC257BC1C58925 /* FSAVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC64EC6B243E2FF1E27A029A02B22C68 /* FSAVKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		69FD94122FEBA6C5C70192F05EDC3840 /* FSPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 120678434306E28E91D7DBE575BC61ED /* FSPdf.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		734ECFB64C00D6B19F85433C33958F83 /* FuSoft.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B7A15EC73653704517A5B662979A39 /* FuSoft.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		76CE1E2D55DCDA59228FD46D83841C7D /* FSHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34874BBA183ED9B4C200EAFCD2A540 /* FSHook.m */; };
-		858672229F3BC1BC97970348AD6EA248 /* FSEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8702A3A9EF1A10A0FD15D23D0D89D06B /* FSEntity.m */; };
-		8718658BA918BBAA3712E446BBC9437B /* FSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 984CC6F8466BDF09CC112FFE08D98BE5 /* FSConstant.m */; };
-		8B9D94A3C7A85688248412399FF25A60 /* FSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC045FBBF460C32E715579B2E65640 /* FSKit.m */; };
-		92CF99A5A0FDD045FEB595C4C73D08F0 /* FSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AFC04012BA5B13424B516672A62636 /* FSFile.m */; };
-		93776AE25FB4F12F17C7C33C3A55CEF5 /* FSConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6405B37C0A3E1C429DB5FBCF79B9C3 /* FSConstant.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9EAA8917E39F886B097CAD66E201E306 /* FSRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3A7F0DFC1A4F515725B72A35D42BD9 /* FSRuntime.m */; };
-		A075C05412495EEA541A779551652F1C /* FSRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E5EC79BAD1CB988A5ED241BD88992B /* FSRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B01EC39129D2B2BF153BB9680F744101 /* FSAVKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A2904DFE8049F0104513C8F3CB511679 /* FSAVKit.m */; };
-		BD132FAAA355DB55C9FB8AF9B925320A /* FSURLSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 310693EB75348DBBDDFBB46D49CFEEC9 /* FSURLSession.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DA2E76D0F0F4B9EC1B1814194A41C8D4 /* FSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2191EEBBA51259C39CBE8E323E6E70 /* FSDate.m */; };
-		DE3983FF4DDE772873B71AC49F0FE855 /* FSFile.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5515BBB44578A3C9717F538C1C0478 /* FSFile.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		ED5BC5B0985296FEF7A918EC0A127A02 /* FSAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DC0EBF069FFCC064A558C59AD08F6 /* FSAlgorithm.m */; };
-		F0442D86789FEBF129B1325B684E1BD4 /* NOTE.txt in Sources */ = {isa = PBXBuildFile; fileRef = 4893CFB6783C1D1FC0C445965FCFB1CF /* NOTE.txt */; };
-		F55E72DD41B3BC01A6E78B0A63FE4349 /* FSDBMaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A560C433D6A932DB621B7813266FBB /* FSDBMaster-dummy.m */; };
-		F5B850888590B2B1935D31DA8E5CEB05 /* FSDBMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 13DCA444A30C90BD7CB336501289A5D8 /* FSDBMaster.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FC259BCFA0B05CC83BA0FD1479B3C930 /* FSLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD47B0165B45B2D61C2016A40553063 /* FSLocalNotification.m */; };
+		00BADD3AF00B4E832D0AB8856043853F /* FSAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC36158C1755589CA90871A51A80D04 /* FSAlgorithm.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		02710E591621FE2509FD47827B1FED43 /* FSURLSession.h in Headers */ = {isa = PBXBuildFile; fileRef = BBA260A272FF11643EB80D19D171D69F /* FSURLSession.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		10E4A89CF81E98A59A0B97B58B6F28F8 /* FSKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC3C8F5F47214044E59EAE380A977B /* FSKit-dummy.m */; };
+		28A9DA9E38FDED6584CDA376A4F0EC14 /* FSDBMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 9808BB96A58D329FE947F204FD61768E /* FSDBMaster.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		34127CCA1DEDDC142D0AC3F999BC0E92 /* FSDBMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 383521037072A0ED1B016AE8E348DBBB /* FSDBMaster.m */; };
+		3C1CAF821A20763D207E380414F9F06C /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FD96A73B5E3E4AEBFDFD733D3741C90 /* FSKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		442503D36B4BA7CF9E4F1E4848E5DB77 /* FSLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDF681736D41411D33C750F9EB0CB29 /* FSLocalNotification.m */; };
+		48DD0903D5B38D56D01EAF9DFA1CBBB6 /* FSFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 305F63FC12D78D502CEE0439E121CC2E /* FSFile.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		48FB5B0167FAA67043BEDEB83E3D9708 /* FSDBMaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFD60CF7B412FE72CE1CE0B3DBC1E9 /* FSDBMaster-dummy.m */; };
+		4BBC6D44E6BC96339B5AF1FA3BAA75B1 /* FSHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B81068FD69D397E13E344F92E72AEB9B /* FSHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4C859D5614D82FE4BB0CAB4DDB0AD170 /* FSAVKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E4A2A766F796FC6246D710622C5F6 /* FSAVKit.m */; };
+		509CA5CB3D14D0F55B465E42EE6C7200 /* FSAVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D254A6DC9FD01CCAC6FD37C5437C37D /* FSAVKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5460EA3599A5C7D9FADE35401990D722 /* FSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B376026FBC94BA91B422A472CB5F91 /* FSKit.m */; };
+		78A6B6E078117D0C838A07EC77F46B98 /* FSLocalNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = DF272D8782C17DAEE469D8F8BA8B5ABC /* FSLocalNotification.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		82DA0181F759048674680D7D6D62390B /* FSAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E37A8DD2FDB30C0847C87F5D5926A /* FSAlgorithm.m */; };
+		87370D22747B7AAB75AE0686D567B21A /* FSConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = A8556ACD1EA4EA7B4EC7FB4042AE872F /* FSConstant.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		87E2CAF8CA0299256F28E8A8C4030851 /* FSEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B7859780D5898DD54ED3D0AA7354EBA /* FSEntity.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9BAA37E76BBF625C94D13FA2793526EC /* FuSoft.h in Headers */ = {isa = PBXBuildFile; fileRef = 1377EFC9A412A746457A885F87B3E5B1 /* FuSoft.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3BC3696928EB971224CB519C48F546A /* FSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D780C321F76FB4F0BDC3DB666D7CD15E /* FSFile.m */; };
+		A96B4D86B7372B0A17112FC93F2D35B4 /* FSPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 05068557F95C9982783E2941C8F4040C /* FSPdf.m */; };
+		ADEC0F458FD845E9A7A171F913A1C3AF /* FSRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFE095B9D53FD0E22A27B003DB6DFFB /* FSRuntime.m */; };
+		C26FFD58D86474CABE4BA05F47F5A7C3 /* FSRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A07B6E0C49395A42F095E08C43D11D1 /* FSRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D1AB039B56EAA545A493088DCBA98466 /* NOTE.txt in Sources */ = {isa = PBXBuildFile; fileRef = A2E3CF032A07E3581B3D549B965D3EAF /* NOTE.txt */; };
+		D418A48D08DE08CF73C865C187AEB8A4 /* FSEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D667B0F42AC6A475A189D3A541483D /* FSEntity.m */; };
+		DC0162D50AC891F90BD241D2D24B20F9 /* FSURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE680CBE09F7DCE4D9010E312904BA6 /* FSURLSession.m */; };
+		E4B347B5CD1077943F600AEBAA7A8EBD /* FSPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 94442D855E711F9E2928B6486C56E789 /* FSPdf.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E4D98F98760B6F98BE7CF62969BD2EA8 /* Pods-FSDBMasterDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB09410C1AD0ED4ED5377913CD399E8 /* Pods-FSDBMasterDemo-dummy.m */; };
+		EA6525D9C979C76CDFB272E23564FFF8 /* FSHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CEBF6BB90AEB8B0307C39F186F7538 /* FSHook.m */; };
+		EE3237FC54E301FA99DDDA3F60778051 /* FSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0B87D27FC342EF22147C1336BA424A /* FSDate.m */; };
+		F6634147CD71607702FA5AD26CFC3670 /* FSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F2B70EECA9AF5EBB4E4FB6FC33D9 /* FSConstant.m */; };
+		FCB7E370AB99DFC21638358BFCB6B1B3 /* FSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = FC4236C690DC3A70EAEC0F53D18719E8 /* FSDate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		658AD290A2161D484E589DC4A21EF04F /* PBXContainerItemProxy */ = {
+		8801A747016F1A81255FABAADED5BEA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1441891FED14ED477C4DCF5DE00B39D;
+			remoteGlobalIDString = 1322E917B36B20281004FB771198C858;
 			remoteInfo = FSDBMaster;
 		};
-		B06EFAE0EB30E453F9D36F05CDD55B4E /* PBXContainerItemProxy */ = {
+		8AFC1FD5DB63DC4C4BE66CA68A2FA4AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0FA6FAB25C3CFF7BB58955A7AFC98A27;
+			remoteGlobalIDString = ED3E806B91B4B9071D9185FC3D4D831A;
 			remoteInfo = FSKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D2191EEBBA51259C39CBE8E323E6E70 /* FSDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSDate.m; path = FSKit/Classes/FSDate.m; sourceTree = "<group>"; };
-		120678434306E28E91D7DBE575BC61ED /* FSPdf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSPdf.h; path = FSKit/Classes/FSPdf.h; sourceTree = "<group>"; };
-		13813AECC38F5DBF504C8BBEAC3A6A46 /* FSKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSKit-dummy.m"; sourceTree = "<group>"; };
-		13DCA444A30C90BD7CB336501289A5D8 /* FSDBMaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSDBMaster.h; path = FSDBMaster/Classes/FSDBMaster.h; sourceTree = "<group>"; };
-		26F4F1D5A5F9A95083B4341C178CF7D6 /* Pods-FSDBMasterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSDBMasterDemo.release.xcconfig"; sourceTree = "<group>"; };
-		2D6405B37C0A3E1C429DB5FBCF79B9C3 /* FSConstant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSConstant.h; path = FSKit/Classes/FSConstant.h; sourceTree = "<group>"; };
-		310693EB75348DBBDDFBB46D49CFEEC9 /* FSURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSURLSession.h; path = FSKit/Classes/FSURLSession.h; sourceTree = "<group>"; };
-		3758267329455F90C37060032D4E6F3C /* FSPdf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSPdf.m; path = FSKit/Classes/FSPdf.m; sourceTree = "<group>"; };
-		3E38C80BD016CCE199635C04D5D3ED9E /* Pods-FSDBMasterDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSDBMasterDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		42E5EC79BAD1CB988A5ED241BD88992B /* FSRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSRuntime.h; path = FSKit/Classes/FSRuntime.h; sourceTree = "<group>"; };
-		44E3BFD2636A291A4306FC226651CD71 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		4893CFB6783C1D1FC0C445965FCFB1CF /* NOTE.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = NOTE.txt; path = FSDBMaster/Classes/NOTE.txt; sourceTree = "<group>"; };
-		4DCC045FBBF460C32E715579B2E65640 /* FSKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSKit.m; path = FSKit/Classes/FSKit.m; sourceTree = "<group>"; };
-		66A560C433D6A932DB621B7813266FBB /* FSDBMaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSDBMaster-dummy.m"; sourceTree = "<group>"; };
-		68D92ED36664AEF97DFA2FACF76AFA32 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		69547C351359FC8C720E4E7C3A6C1246 /* FSKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSKit-prefix.pch"; sourceTree = "<group>"; };
-		6FD47B0165B45B2D61C2016A40553063 /* FSLocalNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSLocalNotification.m; path = FSKit/Classes/FSLocalNotification.m; sourceTree = "<group>"; };
-		710278E0F38FDB7D672A9D3E1144CD5A /* FSKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSKit.h; path = FSKit/Classes/FSKit.h; sourceTree = "<group>"; };
-		75722EDC7B202F866720D4A52C933148 /* libPods-FSDBMasterDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FSDBMasterDemo.a"; path = "libPods-FSDBMasterDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B34874BBA183ED9B4C200EAFCD2A540 /* FSHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSHook.m; path = FSKit/Classes/FSHook.m; sourceTree = "<group>"; };
-		81AFC04012BA5B13424B516672A62636 /* FSFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSFile.m; path = FSKit/Classes/FSFile.m; sourceTree = "<group>"; };
-		8303A3CACA213A654B706FD274344C5D /* libFSDBMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSDBMaster.a; path = libFSDBMaster.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8702A3A9EF1A10A0FD15D23D0D89D06B /* FSEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSEntity.m; path = FSKit/Classes/FSEntity.m; sourceTree = "<group>"; };
-		876ACBAED9FED8A5158621D6CFB5D360 /* Pods-FSDBMasterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSDBMasterDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		879991AA0C5B73A6DB162DFAE24F15CC /* FSLocalNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSLocalNotification.h; path = FSKit/Classes/FSLocalNotification.h; sourceTree = "<group>"; };
-		8F3141FA036DBEDC4870762928EE97E0 /* FSDBMaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSDBMaster-prefix.pch"; sourceTree = "<group>"; };
-		933EA8360E36DB8E55373ED312A388BA /* FSDBMaster.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FSDBMaster.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96D052D0EEB6BE5FBAD8C7160BDF3B23 /* FSAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSAlgorithm.h; path = FSKit/Classes/FSAlgorithm.h; sourceTree = "<group>"; };
-		984CC6F8466BDF09CC112FFE08D98BE5 /* FSConstant.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSConstant.m; path = FSKit/Classes/FSConstant.m; sourceTree = "<group>"; };
-		9AA5AAF9A98F2CDBEC1BDC1B75D2A83B /* Pods-FSDBMasterDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSDBMasterDemo-dummy.m"; sourceTree = "<group>"; };
-		9E3A7F0DFC1A4F515725B72A35D42BD9 /* FSRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSRuntime.m; path = FSKit/Classes/FSRuntime.m; sourceTree = "<group>"; };
-		A0493690F929CFEEDD882F84F7B1B9D4 /* FSDBMaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSDBMaster.xcconfig; sourceTree = "<group>"; };
-		A2904DFE8049F0104513C8F3CB511679 /* FSAVKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSAVKit.m; path = FSKit/Classes/FSAVKit.m; sourceTree = "<group>"; };
-		A3033C68884478840BAB782EBA0A7F37 /* FSKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSKit.xcconfig; sourceTree = "<group>"; };
-		A548B2C4B414C6B8D8EBEE1D16FB3E16 /* FSDBMaster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSDBMaster.m; path = FSDBMaster/Classes/FSDBMaster.m; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C14971E92EBFFD8D33F486572EDC9FCE /* FSDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSDate.h; path = FSKit/Classes/FSDate.h; sourceTree = "<group>"; };
-		D6B7A15EC73653704517A5B662979A39 /* FuSoft.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FuSoft.h; path = FSKit/Classes/FuSoft.h; sourceTree = "<group>"; };
-		D6D5F4F0825BA3EEBD0DE430E8D23A80 /* FSURLSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSURLSession.m; path = FSKit/Classes/FSURLSession.m; sourceTree = "<group>"; };
-		D72A954CFD02BD323080B6A64D2C2A33 /* Pods-FSDBMasterDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSDBMasterDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		DB6DC0EBF069FFCC064A558C59AD08F6 /* FSAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSAlgorithm.m; path = FSKit/Classes/FSAlgorithm.m; sourceTree = "<group>"; };
-		DC5515BBB44578A3C9717F538C1C0478 /* FSFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSFile.h; path = FSKit/Classes/FSFile.h; sourceTree = "<group>"; };
-		EC64EC6B243E2FF1E27A029A02B22C68 /* FSAVKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSAVKit.h; path = FSKit/Classes/FSAVKit.h; sourceTree = "<group>"; };
-		ECB6C497DFB3D0D3A46139EB57F1E10F /* FSEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSEntity.h; path = FSKit/Classes/FSEntity.h; sourceTree = "<group>"; };
-		F6D2B7ADBB1EA7128480B933530E4F18 /* FSHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSHook.h; path = FSKit/Classes/FSHook.h; sourceTree = "<group>"; };
-		FB73944068BF1D21F142A92EB3DB84AB /* libFSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSKit.a; path = libFSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0145B01169BFF62094D94348EEBABA76 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		02CEBF6BB90AEB8B0307C39F186F7538 /* FSHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSHook.m; path = FSKit/Classes/FSHook.m; sourceTree = "<group>"; };
+		05068557F95C9982783E2941C8F4040C /* FSPdf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSPdf.m; path = FSKit/Classes/FSPdf.m; sourceTree = "<group>"; };
+		1377EFC9A412A746457A885F87B3E5B1 /* FuSoft.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FuSoft.h; path = FSKit/Classes/FuSoft.h; sourceTree = "<group>"; };
+		18AC3C8F5F47214044E59EAE380A977B /* FSKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSKit-dummy.m"; sourceTree = "<group>"; };
+		19BFD60CF7B412FE72CE1CE0B3DBC1E9 /* FSDBMaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSDBMaster-dummy.m"; sourceTree = "<group>"; };
+		1B0D9852C18A059838691BC1A9BAB63F /* FSKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSKit-prefix.pch"; sourceTree = "<group>"; };
+		1BFE095B9D53FD0E22A27B003DB6DFFB /* FSRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSRuntime.m; path = FSKit/Classes/FSRuntime.m; sourceTree = "<group>"; };
+		2C33F2B70EECA9AF5EBB4E4FB6FC33D9 /* FSConstant.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSConstant.m; path = FSKit/Classes/FSConstant.m; sourceTree = "<group>"; };
+		305F63FC12D78D502CEE0439E121CC2E /* FSFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSFile.h; path = FSKit/Classes/FSFile.h; sourceTree = "<group>"; };
+		310D59C05A9677A372202A7A459D3C4C /* libFSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSKit.a; path = libFSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		334E4A2A766F796FC6246D710622C5F6 /* FSAVKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSAVKit.m; path = FSKit/Classes/FSAVKit.m; sourceTree = "<group>"; };
+		383521037072A0ED1B016AE8E348DBBB /* FSDBMaster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSDBMaster.m; path = FSDBMaster/Classes/FSDBMaster.m; sourceTree = "<group>"; };
+		3CDDFE54C2E21848472490A1C38F379C /* Pods-FSDBMasterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSDBMasterDemo.release.xcconfig"; sourceTree = "<group>"; };
+		431E1E3E3442FB092DF64EC74997D4F6 /* FSDBMaster.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FSDBMaster.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4D254A6DC9FD01CCAC6FD37C5437C37D /* FSAVKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSAVKit.h; path = FSKit/Classes/FSAVKit.h; sourceTree = "<group>"; };
+		4EE680CBE09F7DCE4D9010E312904BA6 /* FSURLSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSURLSession.m; path = FSKit/Classes/FSURLSession.m; sourceTree = "<group>"; };
+		4FC36158C1755589CA90871A51A80D04 /* FSAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSAlgorithm.h; path = FSKit/Classes/FSAlgorithm.h; sourceTree = "<group>"; };
+		541506A434E7303700F76B270B22F137 /* FSDBMaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSDBMaster.xcconfig; sourceTree = "<group>"; };
+		6916FA156858BFD45F6E3244315EC618 /* Pods-FSDBMasterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSDBMasterDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6FD96A73B5E3E4AEBFDFD733D3741C90 /* FSKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSKit.h; path = FSKit/Classes/FSKit.h; sourceTree = "<group>"; };
+		798971B2DDB28B59E7AE2EDB17832A6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8A07B6E0C49395A42F095E08C43D11D1 /* FSRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSRuntime.h; path = FSKit/Classes/FSRuntime.h; sourceTree = "<group>"; };
+		8B7859780D5898DD54ED3D0AA7354EBA /* FSEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSEntity.h; path = FSKit/Classes/FSEntity.h; sourceTree = "<group>"; };
+		90B376026FBC94BA91B422A472CB5F91 /* FSKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSKit.m; path = FSKit/Classes/FSKit.m; sourceTree = "<group>"; };
+		90D667B0F42AC6A475A189D3A541483D /* FSEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSEntity.m; path = FSKit/Classes/FSEntity.m; sourceTree = "<group>"; };
+		94442D855E711F9E2928B6486C56E789 /* FSPdf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSPdf.h; path = FSKit/Classes/FSPdf.h; sourceTree = "<group>"; };
+		9808BB96A58D329FE947F204FD61768E /* FSDBMaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSDBMaster.h; path = FSDBMaster/Classes/FSDBMaster.h; sourceTree = "<group>"; };
+		9C94CD55CA61DE091D3C283E0B7C299C /* libPods-FSDBMasterDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FSDBMasterDemo.a"; path = "libPods-FSDBMasterDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2E3CF032A07E3581B3D549B965D3EAF /* NOTE.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = NOTE.txt; path = FSDBMaster/Classes/NOTE.txt; sourceTree = "<group>"; };
+		A72F39F0131F30B1BE99302528A64394 /* FSKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSKit.xcconfig; sourceTree = "<group>"; };
+		A8556ACD1EA4EA7B4EC7FB4042AE872F /* FSConstant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSConstant.h; path = FSKit/Classes/FSConstant.h; sourceTree = "<group>"; };
+		B81068FD69D397E13E344F92E72AEB9B /* FSHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSHook.h; path = FSKit/Classes/FSHook.h; sourceTree = "<group>"; };
+		BBA260A272FF11643EB80D19D171D69F /* FSURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSURLSession.h; path = FSKit/Classes/FSURLSession.h; sourceTree = "<group>"; };
+		BCB09410C1AD0ED4ED5377913CD399E8 /* Pods-FSDBMasterDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSDBMasterDemo-dummy.m"; sourceTree = "<group>"; };
+		C19C0A2A894AFF1237BD5D168B3BD6EE /* Pods-FSDBMasterDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSDBMasterDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		C8F0FAF6F0D9F4D4C1DA9368D6133A93 /* Pods-FSDBMasterDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSDBMasterDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CCDF681736D41411D33C750F9EB0CB29 /* FSLocalNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSLocalNotification.m; path = FSKit/Classes/FSLocalNotification.m; sourceTree = "<group>"; };
+		D23E37A8DD2FDB30C0847C87F5D5926A /* FSAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSAlgorithm.m; path = FSKit/Classes/FSAlgorithm.m; sourceTree = "<group>"; };
+		D780C321F76FB4F0BDC3DB666D7CD15E /* FSFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSFile.m; path = FSKit/Classes/FSFile.m; sourceTree = "<group>"; };
+		D89B0611ECDC59E92E448F4270CDC5FC /* FSDBMaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSDBMaster-prefix.pch"; sourceTree = "<group>"; };
+		DF272D8782C17DAEE469D8F8BA8B5ABC /* FSLocalNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSLocalNotification.h; path = FSKit/Classes/FSLocalNotification.h; sourceTree = "<group>"; };
+		E7596669A72967C3EE82002D0B6EDFFF /* libFSDBMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSDBMaster.a; path = libFSDBMaster.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0B87D27FC342EF22147C1336BA424A /* FSDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSDate.m; path = FSKit/Classes/FSDate.m; sourceTree = "<group>"; };
+		FC4236C690DC3A70EAEC0F53D18719E8 /* FSDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSDate.h; path = FSKit/Classes/FSDate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		78BA4FDECDF67CE68BD159AA422E7EE8 /* Frameworks */ = {
+		0C0C751DB55FC5E8E72DD749B02C16C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D86432EE939687570E3C665BAEB860B9 /* Frameworks */ = {
+		687A508DF69E2523937F659BDE798091 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD5D9DE8F5B66450E594678A406F6210 /* Frameworks */ = {
+		9273271DD2249F366499EF75AC2EDF9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,216 +131,199 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+		13F37E43D1C7C85567C3B8C8562A03FE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				54F582913ED3F78BC3B36A94F2EAB35E /* Pods-FSDBMasterDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3DE681AF6B8D198C3CA93A73762460F0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				431E1E3E3442FB092DF64EC74997D4F6 /* FSDBMaster.podspec */,
+				798971B2DDB28B59E7AE2EDB17832A6F /* LICENSE */,
+				0145B01169BFF62094D94348EEBABA76 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		54F582913ED3F78BC3B36A94F2EAB35E /* Pods-FSDBMasterDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C8F0FAF6F0D9F4D4C1DA9368D6133A93 /* Pods-FSDBMasterDemo-acknowledgements.markdown */,
+				C19C0A2A894AFF1237BD5D168B3BD6EE /* Pods-FSDBMasterDemo-acknowledgements.plist */,
+				BCB09410C1AD0ED4ED5377913CD399E8 /* Pods-FSDBMasterDemo-dummy.m */,
+				6916FA156858BFD45F6E3244315EC618 /* Pods-FSDBMasterDemo.debug.xcconfig */,
+				3CDDFE54C2E21848472490A1C38F379C /* Pods-FSDBMasterDemo.release.xcconfig */,
+			);
+			name = "Pods-FSDBMasterDemo";
+			path = "Target Support Files/Pods-FSDBMasterDemo";
+			sourceTree = "<group>";
+		};
+		67729D90DC0688541FC81EDE21941409 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CFAA62408C900888173B394B110CEF9 /* FSDBMaster */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7431A50B330C4F43D43DD311A9004D6C /* FSKit */ = {
+			isa = PBXGroup;
+			children = (
+				4FC36158C1755589CA90871A51A80D04 /* FSAlgorithm.h */,
+				D23E37A8DD2FDB30C0847C87F5D5926A /* FSAlgorithm.m */,
+				4D254A6DC9FD01CCAC6FD37C5437C37D /* FSAVKit.h */,
+				334E4A2A766F796FC6246D710622C5F6 /* FSAVKit.m */,
+				A8556ACD1EA4EA7B4EC7FB4042AE872F /* FSConstant.h */,
+				2C33F2B70EECA9AF5EBB4E4FB6FC33D9 /* FSConstant.m */,
+				FC4236C690DC3A70EAEC0F53D18719E8 /* FSDate.h */,
+				EF0B87D27FC342EF22147C1336BA424A /* FSDate.m */,
+				8B7859780D5898DD54ED3D0AA7354EBA /* FSEntity.h */,
+				90D667B0F42AC6A475A189D3A541483D /* FSEntity.m */,
+				305F63FC12D78D502CEE0439E121CC2E /* FSFile.h */,
+				D780C321F76FB4F0BDC3DB666D7CD15E /* FSFile.m */,
+				B81068FD69D397E13E344F92E72AEB9B /* FSHook.h */,
+				02CEBF6BB90AEB8B0307C39F186F7538 /* FSHook.m */,
+				6FD96A73B5E3E4AEBFDFD733D3741C90 /* FSKit.h */,
+				90B376026FBC94BA91B422A472CB5F91 /* FSKit.m */,
+				DF272D8782C17DAEE469D8F8BA8B5ABC /* FSLocalNotification.h */,
+				CCDF681736D41411D33C750F9EB0CB29 /* FSLocalNotification.m */,
+				94442D855E711F9E2928B6486C56E789 /* FSPdf.h */,
+				05068557F95C9982783E2941C8F4040C /* FSPdf.m */,
+				8A07B6E0C49395A42F095E08C43D11D1 /* FSRuntime.h */,
+				1BFE095B9D53FD0E22A27B003DB6DFFB /* FSRuntime.m */,
+				BBA260A272FF11643EB80D19D171D69F /* FSURLSession.h */,
+				4EE680CBE09F7DCE4D9010E312904BA6 /* FSURLSession.m */,
+				1377EFC9A412A746457A885F87B3E5B1 /* FuSoft.h */,
+				AA12E92126FAF480106E18D260D1DF87 /* Support Files */,
+			);
+			name = FSKit;
+			path = FSKit;
+			sourceTree = "<group>";
+		};
+		7CFAA62408C900888173B394B110CEF9 /* FSDBMaster */ = {
+			isa = PBXGroup;
+			children = (
+				9808BB96A58D329FE947F204FD61768E /* FSDBMaster.h */,
+				383521037072A0ED1B016AE8E348DBBB /* FSDBMaster.m */,
+				A2E3CF032A07E3581B3D549B965D3EAF /* NOTE.txt */,
+				3DE681AF6B8D198C3CA93A73762460F0 /* Pod */,
+				D999F79C8AF2E44E9120B38E75291BD3 /* Support Files */,
+			);
+			name = FSDBMaster;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		835BF3CB09D876633E502A107C6A7DD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7431A50B330C4F43D43DD311A9004D6C /* FSKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA12E92126FAF480106E18D260D1DF87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A72F39F0131F30B1BE99302528A64394 /* FSKit.xcconfig */,
+				18AC3C8F5F47214044E59EAE380A977B /* FSKit-dummy.m */,
+				1B0D9852C18A059838691BC1A9BAB63F /* FSKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FSKit";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				67729D90DC0688541FC81EDE21941409 /* Development Pods */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				835BF3CB09D876633E502A107C6A7DD3 /* Pods */,
+				EF2ACAF1FE0AB8A0AB992B221B48F4C3 /* Products */,
+				13F37E43D1C7C85567C3B8C8562A03FE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2D9574AD674DD7FAF708DAC2D7CE8381 /* Products */ = {
+		D999F79C8AF2E44E9120B38E75291BD3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8303A3CACA213A654B706FD274344C5D /* libFSDBMaster.a */,
-				FB73944068BF1D21F142A92EB3DB84AB /* libFSKit.a */,
-				75722EDC7B202F866720D4A52C933148 /* libPods-FSDBMasterDemo.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		31777F9B89D2CD6AC459BB69A98480F3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A0493690F929CFEEDD882F84F7B1B9D4 /* FSDBMaster.xcconfig */,
-				66A560C433D6A932DB621B7813266FBB /* FSDBMaster-dummy.m */,
-				8F3141FA036DBEDC4870762928EE97E0 /* FSDBMaster-prefix.pch */,
+				541506A434E7303700F76B270B22F137 /* FSDBMaster.xcconfig */,
+				19BFD60CF7B412FE72CE1CE0B3DBC1E9 /* FSDBMaster-dummy.m */,
+				D89B0611ECDC59E92E448F4270CDC5FC /* FSDBMaster-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "FSDBMasterDemo/Pods/Target Support Files/FSDBMaster";
 			sourceTree = "<group>";
 		};
-		41840D47E7F0B84C68F94695B22F274C /* Pods-FSDBMasterDemo */ = {
+		EF2ACAF1FE0AB8A0AB992B221B48F4C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E38C80BD016CCE199635C04D5D3ED9E /* Pods-FSDBMasterDemo-acknowledgements.markdown */,
-				D72A954CFD02BD323080B6A64D2C2A33 /* Pods-FSDBMasterDemo-acknowledgements.plist */,
-				9AA5AAF9A98F2CDBEC1BDC1B75D2A83B /* Pods-FSDBMasterDemo-dummy.m */,
-				876ACBAED9FED8A5158621D6CFB5D360 /* Pods-FSDBMasterDemo.debug.xcconfig */,
-				26F4F1D5A5F9A95083B4341C178CF7D6 /* Pods-FSDBMasterDemo.release.xcconfig */,
+				E7596669A72967C3EE82002D0B6EDFFF /* libFSDBMaster.a */,
+				310D59C05A9677A372202A7A459D3C4C /* libFSKit.a */,
+				9C94CD55CA61DE091D3C283E0B7C299C /* libPods-FSDBMasterDemo.a */,
 			);
-			name = "Pods-FSDBMasterDemo";
-			path = "Target Support Files/Pods-FSDBMasterDemo";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
-				F0AA835048AEC84BEAF49B4295DD6D7B /* Development Pods */,
-				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
-				F21A692A4A6FB53ABED458048CD37CB1 /* Pods */,
-				2D9574AD674DD7FAF708DAC2D7CE8381 /* Products */,
-				9E7DB280FAB2F3D57F17733FEFAE0F0E /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		89A4A1B8130FD5E26558C58F800923AD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A3033C68884478840BAB782EBA0A7F37 /* FSKit.xcconfig */,
-				13813AECC38F5DBF504C8BBEAC3A6A46 /* FSKit-dummy.m */,
-				69547C351359FC8C720E4E7C3A6C1246 /* FSKit-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FSKit";
-			sourceTree = "<group>";
-		};
-		9E7DB280FAB2F3D57F17733FEFAE0F0E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				41840D47E7F0B84C68F94695B22F274C /* Pods-FSDBMasterDemo */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		AF2DAAD1F27A5E10E34B25858B087CCB /* FSKit */ = {
-			isa = PBXGroup;
-			children = (
-				96D052D0EEB6BE5FBAD8C7160BDF3B23 /* FSAlgorithm.h */,
-				DB6DC0EBF069FFCC064A558C59AD08F6 /* FSAlgorithm.m */,
-				EC64EC6B243E2FF1E27A029A02B22C68 /* FSAVKit.h */,
-				A2904DFE8049F0104513C8F3CB511679 /* FSAVKit.m */,
-				2D6405B37C0A3E1C429DB5FBCF79B9C3 /* FSConstant.h */,
-				984CC6F8466BDF09CC112FFE08D98BE5 /* FSConstant.m */,
-				C14971E92EBFFD8D33F486572EDC9FCE /* FSDate.h */,
-				0D2191EEBBA51259C39CBE8E323E6E70 /* FSDate.m */,
-				ECB6C497DFB3D0D3A46139EB57F1E10F /* FSEntity.h */,
-				8702A3A9EF1A10A0FD15D23D0D89D06B /* FSEntity.m */,
-				DC5515BBB44578A3C9717F538C1C0478 /* FSFile.h */,
-				81AFC04012BA5B13424B516672A62636 /* FSFile.m */,
-				F6D2B7ADBB1EA7128480B933530E4F18 /* FSHook.h */,
-				7B34874BBA183ED9B4C200EAFCD2A540 /* FSHook.m */,
-				710278E0F38FDB7D672A9D3E1144CD5A /* FSKit.h */,
-				4DCC045FBBF460C32E715579B2E65640 /* FSKit.m */,
-				879991AA0C5B73A6DB162DFAE24F15CC /* FSLocalNotification.h */,
-				6FD47B0165B45B2D61C2016A40553063 /* FSLocalNotification.m */,
-				120678434306E28E91D7DBE575BC61ED /* FSPdf.h */,
-				3758267329455F90C37060032D4E6F3C /* FSPdf.m */,
-				42E5EC79BAD1CB988A5ED241BD88992B /* FSRuntime.h */,
-				9E3A7F0DFC1A4F515725B72A35D42BD9 /* FSRuntime.m */,
-				310693EB75348DBBDDFBB46D49CFEEC9 /* FSURLSession.h */,
-				D6D5F4F0825BA3EEBD0DE430E8D23A80 /* FSURLSession.m */,
-				D6B7A15EC73653704517A5B662979A39 /* FuSoft.h */,
-				89A4A1B8130FD5E26558C58F800923AD /* Support Files */,
-			);
-			name = FSKit;
-			path = FSKit;
-			sourceTree = "<group>";
-		};
-		F0AA835048AEC84BEAF49B4295DD6D7B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F8808DD39A0079A8BF3B68272F0B3A17 /* FSDBMaster */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		F21A692A4A6FB53ABED458048CD37CB1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AF2DAAD1F27A5E10E34B25858B087CCB /* FSKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F8808DD39A0079A8BF3B68272F0B3A17 /* FSDBMaster */ = {
-			isa = PBXGroup;
-			children = (
-				13DCA444A30C90BD7CB336501289A5D8 /* FSDBMaster.h */,
-				A548B2C4B414C6B8D8EBEE1D16FB3E16 /* FSDBMaster.m */,
-				4893CFB6783C1D1FC0C445965FCFB1CF /* NOTE.txt */,
-				FD918FD07BE70B74F1A18B495843ACF7 /* Pod */,
-				31777F9B89D2CD6AC459BB69A98480F3 /* Support Files */,
-			);
-			name = FSDBMaster;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		FD918FD07BE70B74F1A18B495843ACF7 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				933EA8360E36DB8E55373ED312A388BA /* FSDBMaster.podspec */,
-				68D92ED36664AEF97DFA2FACF76AFA32 /* LICENSE */,
-				44E3BFD2636A291A4306FC226651CD71 /* README.md */,
-			);
-			name = Pod;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1F014F3CE2BCE78DD674C604D94AFFDA /* Headers */ = {
+		1881BC9B5CB981CE83DBE8CB18F17F45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		768D55FC7026E4253CDF8138EDDAD1E6 /* Headers */ = {
+		5028813D51EDA8949713B6129E6B2C91 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5B850888590B2B1935D31DA8E5CEB05 /* FSDBMaster.h in Headers */,
+				00BADD3AF00B4E832D0AB8856043853F /* FSAlgorithm.h in Headers */,
+				509CA5CB3D14D0F55B465E42EE6C7200 /* FSAVKit.h in Headers */,
+				87370D22747B7AAB75AE0686D567B21A /* FSConstant.h in Headers */,
+				FCB7E370AB99DFC21638358BFCB6B1B3 /* FSDate.h in Headers */,
+				87E2CAF8CA0299256F28E8A8C4030851 /* FSEntity.h in Headers */,
+				48DD0903D5B38D56D01EAF9DFA1CBBB6 /* FSFile.h in Headers */,
+				4BBC6D44E6BC96339B5AF1FA3BAA75B1 /* FSHook.h in Headers */,
+				3C1CAF821A20763D207E380414F9F06C /* FSKit.h in Headers */,
+				78A6B6E078117D0C838A07EC77F46B98 /* FSLocalNotification.h in Headers */,
+				E4B347B5CD1077943F600AEBAA7A8EBD /* FSPdf.h in Headers */,
+				C26FFD58D86474CABE4BA05F47F5A7C3 /* FSRuntime.h in Headers */,
+				02710E591621FE2509FD47827B1FED43 /* FSURLSession.h in Headers */,
+				9BAA37E76BBF625C94D13FA2793526EC /* FuSoft.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9112D4628632DF846A6C3AD9E086513D /* Headers */ = {
+		89DDF9D27027F18E0BC3E4C16C7E35A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				178CA9C3741ABCFC37BC4C5A90578644 /* FSAlgorithm.h in Headers */,
-				689950B6761D2D7401DC257BC1C58925 /* FSAVKit.h in Headers */,
-				93776AE25FB4F12F17C7C33C3A55CEF5 /* FSConstant.h in Headers */,
-				4ED2663083FD9A18C13184A1C13F5C69 /* FSDate.h in Headers */,
-				3C99D398D6C948F4EE55EC46CAF8517D /* FSEntity.h in Headers */,
-				DE3983FF4DDE772873B71AC49F0FE855 /* FSFile.h in Headers */,
-				231B754C7CE6401AABF9EF82975FCC8E /* FSHook.h in Headers */,
-				422A0B8C660C3ED83E2F8AFE05C0AE00 /* FSKit.h in Headers */,
-				263A61513DCDB7ADCEFDD0ED68F5EE82 /* FSLocalNotification.h in Headers */,
-				69FD94122FEBA6C5C70192F05EDC3840 /* FSPdf.h in Headers */,
-				A075C05412495EEA541A779551652F1C /* FSRuntime.h in Headers */,
-				BD132FAAA355DB55C9FB8AF9B925320A /* FSURLSession.h in Headers */,
-				734ECFB64C00D6B19F85433C33958F83 /* FuSoft.h in Headers */,
+				28A9DA9E38FDED6584CDA376A4F0EC14 /* FSDBMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0FA6FAB25C3CFF7BB58955A7AFC98A27 /* FSKit */ = {
+		1322E917B36B20281004FB771198C858 /* FSDBMaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E421654CC6CF3AF946A9CF5FAB9A81FA /* Build configuration list for PBXNativeTarget "FSKit" */;
+			buildConfigurationList = 67D7056D786773C28B480BAC2C67B363 /* Build configuration list for PBXNativeTarget "FSDBMaster" */;
 			buildPhases = (
-				9112D4628632DF846A6C3AD9E086513D /* Headers */,
-				2DA23BA386D0D76EAD0E94C59E46FC36 /* Sources */,
-				D86432EE939687570E3C665BAEB860B9 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FSKit;
-			productName = FSKit;
-			productReference = FB73944068BF1D21F142A92EB3DB84AB /* libFSKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A1441891FED14ED477C4DCF5DE00B39D /* FSDBMaster */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D06B02C2906919DB76F405F59F6A5CA1 /* Build configuration list for PBXNativeTarget "FSDBMaster" */;
-			buildPhases = (
-				768D55FC7026E4253CDF8138EDDAD1E6 /* Headers */,
-				810CC3C54351C0618A0A8F3F7A80C331 /* Sources */,
-				78BA4FDECDF67CE68BD159AA422E7EE8 /* Frameworks */,
+				89DDF9D27027F18E0BC3E4C16C7E35A2 /* Headers */,
+				2358E9A398F625967CC984AABE8B2242 /* Sources */,
+				9273271DD2249F366499EF75AC2EDF9B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,116 +331,182 @@
 			);
 			name = FSDBMaster;
 			productName = FSDBMaster;
-			productReference = 8303A3CACA213A654B706FD274344C5D /* libFSDBMaster.a */;
+			productReference = E7596669A72967C3EE82002D0B6EDFFF /* libFSDBMaster.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A2261E33ADEB6895A4FC2AE7D9E31A54 /* Pods-FSDBMasterDemo */ = {
+		E9A99CC1AC0F3CDE1421F807BE9C25EC /* Pods-FSDBMasterDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DC08DA4DC1CC867FA407E5DC72FC0AF /* Build configuration list for PBXNativeTarget "Pods-FSDBMasterDemo" */;
+			buildConfigurationList = D57981E7A2C755B60BDD25810A8500AE /* Build configuration list for PBXNativeTarget "Pods-FSDBMasterDemo" */;
 			buildPhases = (
-				1F014F3CE2BCE78DD674C604D94AFFDA /* Headers */,
-				C29F2FF3AA365D4F99B5792F464D7864 /* Sources */,
-				FD5D9DE8F5B66450E594678A406F6210 /* Frameworks */,
+				1881BC9B5CB981CE83DBE8CB18F17F45 /* Headers */,
+				D82BDB6522BD2756C57E406ECF96B643 /* Sources */,
+				0C0C751DB55FC5E8E72DD749B02C16C0 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7634952C6475ED448A88A0F28C638BA7 /* PBXTargetDependency */,
-				00A8F59B8A0C677677D20674EE691901 /* PBXTargetDependency */,
+				9BA3E72987BFB54400CC9C3ED4EB2B22 /* PBXTargetDependency */,
+				F069E41B536E2F516280A8D9626D5E5A /* PBXTargetDependency */,
 			);
 			name = "Pods-FSDBMasterDemo";
 			productName = "Pods-FSDBMasterDemo";
-			productReference = 75722EDC7B202F866720D4A52C933148 /* libPods-FSDBMasterDemo.a */;
+			productReference = 9C94CD55CA61DE091D3C283E0B7C299C /* libPods-FSDBMasterDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ED3E806B91B4B9071D9185FC3D4D831A /* FSKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBC5F481CA5ED69EE57A7BC8BF798596 /* Build configuration list for PBXNativeTarget "FSKit" */;
+			buildPhases = (
+				5028813D51EDA8949713B6129E6B2C91 /* Headers */,
+				E959307DE470F7A6089CD157ABA22F88 /* Sources */,
+				687A508DF69E2523937F659BDE798091 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSKit;
+			productName = FSKit;
+			productReference = 310D59C05A9677A372202A7A459D3C4C /* libFSKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2D9574AD674DD7FAF708DAC2D7CE8381 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = EF2ACAF1FE0AB8A0AB992B221B48F4C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1441891FED14ED477C4DCF5DE00B39D /* FSDBMaster */,
-				0FA6FAB25C3CFF7BB58955A7AFC98A27 /* FSKit */,
-				A2261E33ADEB6895A4FC2AE7D9E31A54 /* Pods-FSDBMasterDemo */,
+				1322E917B36B20281004FB771198C858 /* FSDBMaster */,
+				ED3E806B91B4B9071D9185FC3D4D831A /* FSKit */,
+				E9A99CC1AC0F3CDE1421F807BE9C25EC /* Pods-FSDBMasterDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2DA23BA386D0D76EAD0E94C59E46FC36 /* Sources */ = {
+		2358E9A398F625967CC984AABE8B2242 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5BC5B0985296FEF7A918EC0A127A02 /* FSAlgorithm.m in Sources */,
-				B01EC39129D2B2BF153BB9680F744101 /* FSAVKit.m in Sources */,
-				8718658BA918BBAA3712E446BBC9437B /* FSConstant.m in Sources */,
-				DA2E76D0F0F4B9EC1B1814194A41C8D4 /* FSDate.m in Sources */,
-				858672229F3BC1BC97970348AD6EA248 /* FSEntity.m in Sources */,
-				92CF99A5A0FDD045FEB595C4C73D08F0 /* FSFile.m in Sources */,
-				76CE1E2D55DCDA59228FD46D83841C7D /* FSHook.m in Sources */,
-				32FF3CC2D1B0F9DAE942ED9488BBC11C /* FSKit-dummy.m in Sources */,
-				8B9D94A3C7A85688248412399FF25A60 /* FSKit.m in Sources */,
-				FC259BCFA0B05CC83BA0FD1479B3C930 /* FSLocalNotification.m in Sources */,
-				2FDC31E7A0158E2CE02C12655F79FB19 /* FSPdf.m in Sources */,
-				9EAA8917E39F886B097CAD66E201E306 /* FSRuntime.m in Sources */,
-				073562167C1FACF1939FE8A8ED3A104B /* FSURLSession.m in Sources */,
+				48FB5B0167FAA67043BEDEB83E3D9708 /* FSDBMaster-dummy.m in Sources */,
+				34127CCA1DEDDC142D0AC3F999BC0E92 /* FSDBMaster.m in Sources */,
+				D1AB039B56EAA545A493088DCBA98466 /* NOTE.txt in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		810CC3C54351C0618A0A8F3F7A80C331 /* Sources */ = {
+		D82BDB6522BD2756C57E406ECF96B643 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55E72DD41B3BC01A6E78B0A63FE4349 /* FSDBMaster-dummy.m in Sources */,
-				0AD8BAAD3D195DE9C1592B4215E91CC1 /* FSDBMaster.m in Sources */,
-				F0442D86789FEBF129B1325B684E1BD4 /* NOTE.txt in Sources */,
+				E4D98F98760B6F98BE7CF62969BD2EA8 /* Pods-FSDBMasterDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C29F2FF3AA365D4F99B5792F464D7864 /* Sources */ = {
+		E959307DE470F7A6089CD157ABA22F88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FBE016D859A5D04DBFDA15F40A3D74A /* Pods-FSDBMasterDemo-dummy.m in Sources */,
+				82DA0181F759048674680D7D6D62390B /* FSAlgorithm.m in Sources */,
+				4C859D5614D82FE4BB0CAB4DDB0AD170 /* FSAVKit.m in Sources */,
+				F6634147CD71607702FA5AD26CFC3670 /* FSConstant.m in Sources */,
+				EE3237FC54E301FA99DDDA3F60778051 /* FSDate.m in Sources */,
+				D418A48D08DE08CF73C865C187AEB8A4 /* FSEntity.m in Sources */,
+				A3BC3696928EB971224CB519C48F546A /* FSFile.m in Sources */,
+				EA6525D9C979C76CDFB272E23564FFF8 /* FSHook.m in Sources */,
+				10E4A89CF81E98A59A0B97B58B6F28F8 /* FSKit-dummy.m in Sources */,
+				5460EA3599A5C7D9FADE35401990D722 /* FSKit.m in Sources */,
+				442503D36B4BA7CF9E4F1E4848E5DB77 /* FSLocalNotification.m in Sources */,
+				A96B4D86B7372B0A17112FC93F2D35B4 /* FSPdf.m in Sources */,
+				ADEC0F458FD845E9A7A171F913A1C3AF /* FSRuntime.m in Sources */,
+				DC0162D50AC891F90BD241D2D24B20F9 /* FSURLSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00A8F59B8A0C677677D20674EE691901 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FSKit;
-			target = 0FA6FAB25C3CFF7BB58955A7AFC98A27 /* FSKit */;
-			targetProxy = B06EFAE0EB30E453F9D36F05CDD55B4E /* PBXContainerItemProxy */;
-		};
-		7634952C6475ED448A88A0F28C638BA7 /* PBXTargetDependency */ = {
+		9BA3E72987BFB54400CC9C3ED4EB2B22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FSDBMaster;
-			target = A1441891FED14ED477C4DCF5DE00B39D /* FSDBMaster */;
-			targetProxy = 658AD290A2161D484E589DC4A21EF04F /* PBXContainerItemProxy */;
+			target = 1322E917B36B20281004FB771198C858 /* FSDBMaster */;
+			targetProxy = 8801A747016F1A81255FABAADED5BEA6 /* PBXContainerItemProxy */;
+		};
+		F069E41B536E2F516280A8D9626D5E5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FSKit;
+			target = ED3E806B91B4B9071D9185FC3D4D831A /* FSKit */;
+			targetProxy = 8AFC1FD5DB63DC4C4BE66CA68A2FA4AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		269CEF296A8B0B5FF09DD35847E1FC10 /* Debug */ = {
+		1B34A86E729218E69F6B6592067DC280 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 876ACBAED9FED8A5158621D6CFB5D360 /* Pods-FSDBMasterDemo.debug.xcconfig */;
+			baseConfigurationReference = 541506A434E7303700F76B270B22F137 /* FSDBMaster.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FSDBMaster/FSDBMaster-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FSDBMaster;
+				PRODUCT_NAME = FSDBMaster;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24CD72713A59438108C562F75150F354 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72F39F0131F30B1BE99302528A64394 /* FSKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FSKit/FSKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FSKit;
+				PRODUCT_NAME = FSKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30749EC1801ABB68265B04C4A2123034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6916FA156858BFD45F6E3244315EC618 /* Pods-FSDBMasterDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -476,9 +525,69 @@
 			};
 			name = Debug;
 		};
-		2A852A0BD293A3057671EC7DB57D1DFD /* Debug */ = {
+		89A5A7CB70E823B925DFC7C3149114E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3033C68884478840BAB782EBA0A7F37 /* FSKit.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9A17E7E2EC2BE9BED186BF821F91BC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72F39F0131F30B1BE99302528A64394 /* FSKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -499,7 +608,7 @@
 			};
 			name = Debug;
 		};
-		36AFED3D92BF39DAA7AFC33C671624D9 /* Debug */ = {
+		AA1C57C74312DABE66611D98A5C1BEC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -558,14 +667,37 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6CA94BDE1C3108921887ABE06ECD7F83 /* Release */ = {
+		D04A548A5D31FFF6D21CB64917A53554 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26F4F1D5A5F9A95083B4341C178CF7D6 /* Pods-FSDBMasterDemo.release.xcconfig */;
+			baseConfigurationReference = 541506A434E7303700F76B270B22F137 /* FSDBMaster.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FSDBMaster/FSDBMaster-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FSDBMaster;
+				PRODUCT_NAME = FSDBMaster;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAF93ACAA988C6DAE040E38112C9FCB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CDDFE54C2E21848472490A1C38F379C /* Pods-FSDBMasterDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -585,177 +717,46 @@
 			};
 			name = Release;
 		};
-		C0196A82BDAE830FE18AB3948B1592A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		C68959123B95E05A7A2A8245534E6D09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0493690F929CFEEDD882F84F7B1B9D4 /* FSDBMaster.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FSDBMaster/FSDBMaster-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FSDBMaster;
-				PRODUCT_NAME = FSDBMaster;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		DE5011F10EA648067138CB38C3CFD806 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3033C68884478840BAB782EBA0A7F37 /* FSKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FSKit/FSKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FSKit;
-				PRODUCT_NAME = FSKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EADFBE6D5A49728CDD2B89A8E0332815 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0493690F929CFEEDD882F84F7B1B9D4 /* FSDBMaster.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FSDBMaster/FSDBMaster-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FSDBMaster;
-				PRODUCT_NAME = FSDBMaster;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				36AFED3D92BF39DAA7AFC33C671624D9 /* Debug */,
-				C0196A82BDAE830FE18AB3948B1592A5 /* Release */,
+				AA1C57C74312DABE66611D98A5C1BEC0 /* Debug */,
+				89A5A7CB70E823B925DFC7C3149114E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DC08DA4DC1CC867FA407E5DC72FC0AF /* Build configuration list for PBXNativeTarget "Pods-FSDBMasterDemo" */ = {
+		67D7056D786773C28B480BAC2C67B363 /* Build configuration list for PBXNativeTarget "FSDBMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				269CEF296A8B0B5FF09DD35847E1FC10 /* Debug */,
-				6CA94BDE1C3108921887ABE06ECD7F83 /* Release */,
+				D04A548A5D31FFF6D21CB64917A53554 /* Debug */,
+				1B34A86E729218E69F6B6592067DC280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D06B02C2906919DB76F405F59F6A5CA1 /* Build configuration list for PBXNativeTarget "FSDBMaster" */ = {
+		BBC5F481CA5ED69EE57A7BC8BF798596 /* Build configuration list for PBXNativeTarget "FSKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EADFBE6D5A49728CDD2B89A8E0332815 /* Debug */,
-				C68959123B95E05A7A2A8245534E6D09 /* Release */,
+				9A17E7E2EC2BE9BED186BF821F91BC76 /* Debug */,
+				24CD72713A59438108C562F75150F354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E421654CC6CF3AF946A9CF5FAB9A81FA /* Build configuration list for PBXNativeTarget "FSKit" */ = {
+		D57981E7A2C755B60BDD25810A8500AE /* Build configuration list for PBXNativeTarget "Pods-FSDBMasterDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A852A0BD293A3057671EC7DB57D1DFD /* Debug */,
-				DE5011F10EA648067138CB38C3CFD806 /* Release */,
+				30749EC1801ABB68265B04C4A2123034 /* Debug */,
+				EAF93ACAA988C6DAE040E38112C9FCB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

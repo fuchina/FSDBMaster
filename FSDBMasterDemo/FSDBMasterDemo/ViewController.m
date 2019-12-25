@@ -31,8 +31,8 @@
 }
 
 - (void)insertNewFunction{
-    FSDBMaster *master = FSDBMaster.sharedInstance;
-    NSString *path = master.dbPath;
+    FSDBMaster *master = [FSDBMaster openSQLite3];
+    NSString *path = FSDBMaster.dbPath;
     NSLog(@"%@",path);
     
     NSString *error = [master insert_fields_values:@{@"a":@"1",@"b":@"10",@"c":@"100"} table:@"kfc"];
@@ -43,15 +43,16 @@
     NSString *select = @"select * from kfc";
     NSArray *list = [master querySQL:select tableName:@"kfc"];
     NSLog(@"%@",list);
+    NSLog(@"count %ld",list.count);
 }
 
 - (void)clickA{
-    NSString *path = [FSDBMaster sharedInstance].dbPath;
+    NSString *path = FSDBMaster.dbPath;
     NSLog(@"%@",path);
     
     UIImage *image = [UIImage imageNamed:@"tp.jpg"];
     NSData *data = UIImageJPEGRepresentation(image, 1);
-    FSDBMaster *master = FSDBMaster.sharedInstance;
+    FSDBMaster *master = [FSDBMaster openSQLite3];
     NSString *error = [master insertData:data table:@"image1" key:NSStringFromClass(self.class)];
     if (error) {
         NSLog(@"%@",error);

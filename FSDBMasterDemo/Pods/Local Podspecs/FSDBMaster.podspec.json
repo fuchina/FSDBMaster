@@ -1,6 +1,6 @@
 {
   "name": "FSDBMaster",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "summary": "FSDBMaster is a tool for show logs when app run",
   "description": "This is a very small software library, offering a few methods to help with programming.",
   "homepage": "https://github.com/fuchina/FSDBMaster",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/fuchina/FSDBMaster.git",
-    "tag": "0.0.1"
+    "tag": "0.0.4"
   },
   "source_files": "FSDBMaster/Classes/*.{h,m,txt}",
   "frameworks": "UIKit",

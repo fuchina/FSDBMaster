@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27728CC2675DF7B1798169195C4D1615"
+               BlueprintIdentifier = "E9A99CC1AC0F3CDE1421F807BE9C25EC"
+               BuildableName = "libPods-FSDBMasterDemo.a"
                BlueprintName = "Pods-FSDBMasterDemo"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-FSDBMasterDemo.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
