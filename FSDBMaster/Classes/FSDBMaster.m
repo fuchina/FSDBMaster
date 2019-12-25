@@ -49,8 +49,13 @@ static  FSDBMaster *_defaultMaster;
     return [[FSDBMaster alloc] initWithSQLite3FilePath:path];
 }
 
+static  FSDBMaster *_currentMaster;
 + (FSDBMaster *_Nullable)openSQLite3{
-    return [self openSQLite3:self.dbPath];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _currentMaster = [self openSQLite3:self.dbPath];;
+    });
+    return _currentMaster;
 }
 
 - (instancetype)initWithSQLite3FilePath:(NSString *)path {
