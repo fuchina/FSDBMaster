@@ -19,7 +19,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 /**
  * 打开默认数据库
  */
-+ (FSDBMaster *_Nullable)openSQLite3;
++ (FSDBMaster *_Nullable)sharedInstance;
 
 // 默认数据库路径
 + (NSString *_Nullable)dbPath;

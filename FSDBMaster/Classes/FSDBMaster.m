@@ -50,7 +50,7 @@ static  FSDBMaster *_defaultMaster;
 }
 
 static  FSDBMaster *_currentMaster;
-+ (FSDBMaster *_Nullable)openSQLite3{
++ (FSDBMaster *_Nullable)sharedInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _currentMaster = [self openSQLite3:self.dbPath];;
