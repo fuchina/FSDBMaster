@@ -13,6 +13,11 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 
 @interface FSDBMaster : NSObject
 
+///*
+// * 使用Bundle中的一个数据库
+// */
+//+ (void)setBundleFile:(NSString *_Nullable)fileName;
+
 // 打开数据库，传入数据库路径
 + (FSDBMaster *_Nullable)openSQLite3:(NSString *_Nullable)path;
 

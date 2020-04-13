@@ -19,8 +19,17 @@
     dispatch_queue_t    _queue;
 }
 
-static     dispatch_queue_t    _initQueue;
+//static     NSString    *_bundleDBFile;
+//+ (void)setBundleFile:(NSString *_Nullable)fileName {
+//    NSString *bundle = [[NSBundle mainBundle] pathForResource:fileName ofType:@"db"];
+//    NSFileManager *fm = [NSFileManager defaultManager];
+//    BOOL exist = [fm fileExistsAtPath:bundle];
+//    if (exist) {
+//        _bundleDBFile = bundle;
+//    }
+//}
 
+static     dispatch_queue_t    _initQueue;
 - (void)dealloc {
 #if DEBUG
     NSLog(@"FSDBMaster dealloc");
