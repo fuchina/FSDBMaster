@@ -102,6 +102,14 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
  */
 - (NSString *_Nullable)insertData:(nonnull NSData *)data table:(nonnull NSString *)table key:(nonnull NSString *)key;
 
+/************************** - 事务 - *************************************/
+
+/**
+ * sql参数：1为开始事务，2为提交事务，3为回滚事务
+ * return：error信息，为nil则表示事务操作成功
+ */
+- (NSString *_Nullable)transactionHandler:(NSInteger)type;
+
 @end
 
 

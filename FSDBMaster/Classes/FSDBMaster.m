@@ -707,4 +707,27 @@ static NSString     *_field_type = @"field_type";
     return @"FSDBMaster:unknown error";
 }
 
+- (NSString *_Nullable)transactionHandler:(NSInteger)type {
+    char *sql = NULL;
+    if (type == 1) {
+        sql = "begin;";
+    } else if (type == 2) {
+        sql = "commit;";
+    } else if (type == 3) {
+        sql = "ROLLBACK;";
+    }
+    if (sql == NULL) {
+        return @"sql为NULL";
+    }
+    char *errorMsg;
+    int result = sqlite3_exec(_sqlite3, sql, NULL, NULL, &errorMsg);
+    if (result == SQLITE_OK) {
+        return nil;
+    }
+    if (errorMsg) {
+        sqlite3_free(errorMsg);
+    }
+    return [@"事务操作失败，事务参数类型:" stringByAppendingFormat:@"%ld",(long)type];
+}
+
 @end
