@@ -475,7 +475,7 @@ static  FSDBMaster *_currentMaster;
     if (!([table isKindOfClass:NSString.class] && table.length)) {
         return @"表名为空";
     }
-    NSString *sql = [[NSString alloc] initWithFormat:@"DROP TABLE %@",table];
+    NSString *sql = [[NSString alloc] initWithFormat:@"DROP TABLE %@;",table];
     NSString *error = [self execSQL:sql];
     return error;
 }
