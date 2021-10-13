@@ -627,7 +627,7 @@ static NSString     *_field_type = @"field_type";
 - (NSArray<NSString *> *)keywords{
     static NSArray *list = nil;
     if (!list) {
-        list = @[@"select",@"insert",@"update",@"delete",@"from",@"creat",@"where",@"desc",@"order",@"by",@"group",@"table",@"alter",@"view",@"index",@"when"];
+        list = @[@"select",@"insert",@"update",@"delete",@"from",@"creat",@"where",@"desc",@"order",@"by",@"group",@"table",@"alter",@"view",@"index",@"when",@"on"];
     }
     return list;
 }
