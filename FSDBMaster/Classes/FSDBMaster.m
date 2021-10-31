@@ -35,7 +35,7 @@ static     dispatch_queue_t    _initQueue;
     NSLog(@"FSDBMaster dealloc");
 #endif
     if (_sqlite3) {
-        int result = sqlite3_close(_sqlite3);
+        __unused int result = sqlite3_close(_sqlite3);
         // 有可能后一个操作又打开了同一个数据库，导致关闭失败
 //        NSAssert(result == 0, @"数据库关闭失败");
         _sqlite3 = NULL;
