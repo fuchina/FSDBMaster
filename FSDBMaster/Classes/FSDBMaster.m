@@ -221,41 +221,48 @@ static  FSDBMaster *_currentMaster;
         }
     }
     
-    NSInteger count = keys.count;
-    NSMutableString *whys = [[NSMutableString alloc] init];
-    NSString *fies = [keys componentsJoinedByString:@","];
-    for (int x = 0; x < count; x ++) {
-        if (x == 0) {
-            [whys appendFormat:@":%@",keys[x]];
-        }else{
-            [whys appendFormat:@",:%@",keys[x]];
-        }
-    }
-    NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@);",table,fies,whys];
-
-    sqlite3_stmt *stmt;
-    if (sqlite3_prepare_v2(_sqlite3, insert_sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
-        Class _class_NSString = NSString.class;
-        for (NSString *k in keys) {
-            NSString *nk = [[NSString alloc] initWithFormat:@":%@",k];
-            const char *kc = nk.UTF8String;
-            int idx = sqlite3_bind_parameter_index(stmt, kc);
-            if (idx > 0) {
-                NSString *v = [list objectForKey:k];
-                if (![v isKindOfClass:_class_NSString]) {
-                    v = v.description;
-                }
-                sqlite3_bind_text(stmt, idx, v.UTF8String, -1, SQLITE_STATIC);
+    __block NSString *outErrorMsg = nil;
+    dispatch_sync(_queue, ^{   // 仍然是在主队列执行
+        NSInteger count = keys.count;
+        NSMutableString *whys = [[NSMutableString alloc] init];
+        NSString *fies = [keys componentsJoinedByString:@","];
+        for (int x = 0; x < count; x ++) {
+            if (x == 0) {
+                [whys appendFormat:@":%@",keys[x]];
             }else{
-                NSAssert(idx > 0, @"idx <= 0");
+                [whys appendFormat:@",:%@",keys[x]];
             }
         }
-    }
+        NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@);",table,fies,whys];
+
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(_sqlite3, insert_sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
+            Class _class_NSString = NSString.class;
+            for (NSString *k in keys) {
+                NSString *nk = [[NSString alloc] initWithFormat:@":%@",k];
+                const char *kc = nk.UTF8String;
+                int idx = sqlite3_bind_parameter_index(stmt, kc);
+                if (idx > 0) {
+                    NSString *v = [list objectForKey:k];
+                    if (![v isKindOfClass:_class_NSString]) {
+                        v = v.description;
+                    }
+                    sqlite3_bind_text(stmt, idx, v.UTF8String, -1, SQLITE_STATIC);
+                }else{
+                    NSAssert(idx > 0, @"idx <= 0");
+                }
+            }
+        }
+        
+        int result = sqlite3_step(stmt);
+        if (result != SQLITE_DONE) {
+            sqlite3_finalize(stmt);stmt = NULL;
+            outErrorMsg = @"insertSQL : sqlite3_step(stmt) failed";
+        }
+    });
     
-    int result = sqlite3_step(stmt);
-    if (result != SQLITE_DONE) {
-        sqlite3_finalize(stmt);stmt = NULL;
-        return @"insertSQL : sqlite3_step(stmt) failed";
+    if (outErrorMsg) {
+        return outErrorMsg;
     }
     return nil;
 }
