@@ -257,7 +257,7 @@ static  FSDBMaster *_currentMaster;
         int result = sqlite3_step(stmt);
         if (result != SQLITE_DONE) {
             sqlite3_finalize(stmt);stmt = NULL;
-            outErrorMsg = @"insertSQL : sqlite3_step(stmt) failed";
+            outErrorMsg = [[NSString alloc] initWithFormat:@"insertSQL : sqlite3_step(stmt) failed:%@",insert_sql];
         }
     });
     
