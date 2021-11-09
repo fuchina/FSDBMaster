@@ -203,7 +203,7 @@ static  FSDBMaster *_currentMaster;
     return [self execSQL:sql];
 }
 
-- (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table{
+- (NSString *)insert_fields_values:(NSDictionary<NSString *,id> *)list table:(NSString *)table {
     if (!([table isKindOfClass:NSString.class] && table.length)) {
         return @"insertSQL : table name's length is zero";
     }
@@ -257,7 +257,7 @@ static  FSDBMaster *_currentMaster;
         int result = sqlite3_step(stmt);
         if (result != SQLITE_DONE) {
             sqlite3_finalize(stmt);stmt = NULL;
-            outErrorMsg = [[NSString alloc] initWithFormat:@"insertSQL : sqlite3_step(stmt) failed:%@",insert_sql];
+            outErrorMsg = [[NSString alloc] initWithFormat:@"%@ : insertSQL: sqlite3_step(stmt) failed:%@", table, insert_sql];
         }
     });
     
