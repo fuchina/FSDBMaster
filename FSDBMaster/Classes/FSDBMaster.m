@@ -283,26 +283,30 @@ static  FSDBMaster *_currentMaster;
  更新  eg.
  @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
  */
-- (NSString *)updateSQL:(NSString *)sql{
+- (NSString *)updateSQL:(NSString *)sql {
     return [self execSQL:sql];
 }
 
-- (NSString *)update:(NSDictionary *)dic conditions:(NSDictionary *)conditions table:(NSString *)table{
+- (NSString *)joinSqlForUpdate:(NSDictionary *)dic table:(NSString *)table {
+    if (![dic isKindOfClass:NSDictionary.class]) {
+        return nil;
+    }
+    
+    NSArray *keys = [dic allKeys];
+    NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"UPDATE %@ SET ", table];
+    NSInteger lastIndex = keys.count - 1;
+    for (int x = 0; x < keys.count; x ++) {
+        NSString *key = keys[x];
+        NSString *value = [dic objectForKey:key];
+        
+        if (x == lastIndex) {
+            [sql appendFormat:@"%@ = '%@'", key, value];
+        } else {
+            [sql appendFormat:@"%@ = '%@',", key, value];
+        }
+    }
     return nil;
 }
-
-//- (NSString *)update:(NSString *)table keyValues:(NSDictionary *)keyValues{
-//    if (!([table isKindOfClass:NSString.class] && table.length && [keyValues isKindOfClass:NSDictionary.class] && keyValues.count)) {
-//        return @"参数错误";
-//    }
-//    NSArray *keys = keyValues.allKeys;
-//    NSMutableArray *bids = [[NSMutableArray alloc] init];
-//    for (int x = 0; x < keys.count; x ++) {
-//
-//    }
-//    NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;",table];
-//    return nil;
-//}
 
 - (NSString *)execSQL:(NSString *)SQL type:(NSString *)type{
     if (!([SQL isKindOfClass:NSString.class] && SQL.length)) {

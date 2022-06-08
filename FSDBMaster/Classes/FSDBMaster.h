@@ -46,6 +46,10 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
 - (NSString *_Nullable)updateSQL:(NSString *_Nullable)sql;
+/**
+ *  拼接update的SQL，只拼接了前面及SET的部分，后面的WHERE没有
+ */
+- (NSString *)joinSqlForUpdate:(NSDictionary *)dic table:(NSString *)table;
 
 // 直接执行SQL语句
 - (NSString *_Nullable)execSQL:(NSString *_Nullable)sql;
