@@ -41,18 +41,18 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
  @"DELETE FROM %@ WHERE time = '%@';"
  注意time的值，time是字符串，所以要用''来表示，如果time是字符型数字时加不加''都没关系，但如果time是155555.8888之类时，因为那个小数点导致必须加上''才能找到time
  */
-- (NSString *_Nullable)deleteSQL:(NSString *_Nullable)sql;
-- (NSString *_Nullable)deleteSQL:(NSString *_Nullable)table aid:(NSNumber *_Nullable)aid;
+- (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)sql;
+- (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)table aid:(NSNumber *_Nonnull)aid;
 
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
-- (NSString *_Nullable)updateSQL:(NSString *_Nullable)sql;
+- (NSString *_Nullable)updateSQL:(NSString *_Nonnull)sql;
 /**
  *  拼接update的SQL，只拼接了前面及SET的部分，后面的WHERE没有
  */
-- (NSString *)joinSqlForUpdate:(NSDictionary *)dic table:(NSString *)table;
+- (NSString *_Nullable)joinSqlForUpdate:(NSDictionary *_Nonnull)dic table:(NSString *_Nonnull)table;
 
 // 直接执行SQL语句
-- (NSString *_Nullable)execSQL:(NSString *_Nullable)sql;
+- (NSString *_Nullable)execSQL:(NSString *_Nonnull)sql;
 
 /*
  【SELECT DISTINCT name FROM %@;】// 从%@表中查询name字段的所有不重复的值

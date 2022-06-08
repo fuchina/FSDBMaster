@@ -305,7 +305,7 @@ static  FSDBMaster *_currentMaster;
             [sql appendFormat:@"%@ = '%@',", key, value];
         }
     }
-    return nil;
+    return sql.copy;
 }
 
 - (NSString *)execSQL:(NSString *)SQL type:(NSString *)type{
