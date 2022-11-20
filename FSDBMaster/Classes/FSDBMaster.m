@@ -29,7 +29,6 @@
 //    }
 //}
 
-static     dispatch_queue_t    _initQueue;
 - (void)dealloc {
 #if DEBUG
     NSLog(@"FSDBMaster dealloc");
@@ -42,49 +41,41 @@ static     dispatch_queue_t    _initQueue;
     }
 }
 
-static  FSDBMaster *_defaultMaster;
-+ (FSDBMaster *)openSQLite3:(NSString *)path {
++ (BOOL)openSQLite3:(NSString *)path {
     NSAssert([path isKindOfClass:NSString.class] && path.length, @"数据库文件路径不合法");
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _initQueue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
-        if (!_defaultMaster) {
-            _defaultMaster = [[FSDBMaster alloc] initWithSQLite3FilePath:[self dbPath]];
-        }
-    });
-    if ([[self dbPath] isEqualToString:path]) {
-        return _defaultMaster;
-    }
-    return [[FSDBMaster alloc] initWithSQLite3FilePath:path];
+    return [FSDBMaster.sharedInstance openSQLite3:path];
 }
 
-static  FSDBMaster *_currentMaster;
-+ (FSDBMaster *_Nullable)sharedInstance{
++ (FSDBMaster *_Nullable)sharedInstance {
+    static  FSDBMaster *_currentMaster;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _currentMaster = [self openSQLite3:self.dbPath];;
+        _currentMaster = [[FSDBMaster alloc] init];
+        [_currentMaster openSQLite3:[self dbPath]];
     });
     return _currentMaster;
 }
 
-- (instancetype)initWithSQLite3FilePath:(NSString *)path {
+- (instancetype)init {
     self = [super init];
     if (self) {
-        NSAssert(_initQueue != NULL, @"FSDBMaster初始化队列不存在");
-        _queue = _initQueue;
-        dispatch_sync(_queue, ^{
-            BOOL open = [self openSqlite3DatabaseAtPath:path];
-            if (!open) {
-                NSAssert(open == YES, @"打开数据库失败");
-            }
-        });
-        
-#if DEBUG
-        NSInteger mode = [FSDBMaster sqlite3_threadsafe];
-        NSAssert(mode == 2, @"SQLite3线程模式不是2了？");
-#endif
+        _queue = dispatch_queue_create("fsdbmaster.sync", DISPATCH_QUEUE_SERIAL);
     }
     return self;
+}
+
+- (BOOL)openSQLite3:(NSString *)path {
+    __block BOOL open = NO;
+    dispatch_sync(_queue, ^{
+        open = [self openSqlite3DatabaseAtPath:path];
+        NSAssert(open == YES, @"打开数据库失败");
+    });
+    
+#if DEBUG
+    NSInteger mode = [FSDBMaster sqlite3_threadsafe];
+    NSAssert(mode == 2, @"SQLite3线程模式不是2了？");
+#endif
+    return open;
 }
 
 - (BOOL)openSqlite3DatabaseAtPath:(NSString *)path{
@@ -115,7 +106,7 @@ static  FSDBMaster *_currentMaster;
     return openDatabaseSuccess;
 }
 
-+ (NSString *)dbPath{// 数据库只能放在Documents目录下
++ (NSString *)dbPath {// 数据库只能放在Documents目录下
     static NSString *path = nil;
     if (!path) {
         path = [self dbPathWithFileName:_db_first_name];
@@ -124,7 +115,7 @@ static  FSDBMaster *_currentMaster;
 }
 
 // param: 不需要带扩展名
-+ (NSString *)dbPathWithFileName:(NSString *)name{
++ (NSString *)dbPathWithFileName:(NSString *)name {
     if (!([name isKindOfClass:NSString.class] && name.length)) {
         return nil;
     }
@@ -181,7 +172,7 @@ static  FSDBMaster *_currentMaster;
     return nil;
 }
 
-- (NSString *)execSQL:(NSString *)sql{
+- (NSString *)execSQL:(NSString *)sql {
     __block NSString *errMSG = nil;
     dispatch_sync(_queue, ^{
         sqlite3_stmt *stmt = nil;
@@ -199,7 +190,7 @@ static  FSDBMaster *_currentMaster;
     return errMSG;
 }
 
-- (NSString *)insertSQL:(NSString *)sql{
+- (NSString *)insertSQL:(NSString *)sql {
     return [self execSQL:sql];
 }
 
@@ -267,11 +258,11 @@ static  FSDBMaster *_currentMaster;
     return nil;
 }
 
-- (NSString *)deleteSQL:(NSString *)sql{
+- (NSString *)deleteSQL:(NSString *)sql {
     return [self execSQL:sql];
 }
 
-- (NSString *)deleteSQL:(NSString *)table aid:(NSNumber *)aid{
+- (NSString *)deleteSQL:(NSString *)table aid:(NSNumber *)aid {
     if (!([table isKindOfClass:NSString.class] && table.length && aid)) {
         return @"参数错误";
     }
@@ -308,7 +299,7 @@ static  FSDBMaster *_currentMaster;
     return sql.copy;
 }
 
-- (NSString *)execSQL:(NSString *)SQL type:(NSString *)type{
+- (NSString *)execSQL:(NSString *)SQL type:(NSString *)type {
     if (!([SQL isKindOfClass:NSString.class] && SQL.length)) {
         return @"语句为空";
     }
@@ -329,11 +320,11 @@ static  FSDBMaster *_currentMaster;
  【SELECT * FROM %@ order by time DESC limit 0,10;】    ASC
  【SELECT * FROM %@ WHERE atype = ? OR btype = ? and time BETWEEN 1483228800 AND 1514764799 order by time DESC limit 0,10;】
  */
-- (NSMutableArray<NSDictionary *> *)querySQL:(NSString *)sql tableName:(NSString *)tableName{
+- (NSMutableArray<NSDictionary *> *)querySQL:(NSString *)sql tableName:(NSString *)tableName {
     return [self execQuerySQL:sql tableName:tableName];
 }
 
-- (NSMutableArray *)execQuerySQL:(NSString *)sql tableName:(NSString *)tableName{
+- (NSMutableArray *)execQuerySQL:(NSString *)sql tableName:(NSString *)tableName {
     if (!([sql isKindOfClass:NSString.class] && sql.length)) {
         return nil;
     }
@@ -367,7 +358,7 @@ static  FSDBMaster *_currentMaster;
     return nil;
 }
 
-- (int)countForTable:(NSString *)tableName{
+- (int)countForTable:(NSString *)tableName {
     if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
         return 0;
     }
@@ -391,7 +382,7 @@ static  FSDBMaster *_currentMaster;
     return count;
 }
 
-- (int)countWithSQL:(NSString *)sql table:(NSString *)tableName{
+- (int)countWithSQL:(NSString *)sql table:(NSString *)tableName {
     if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
         return 0;
     }
@@ -417,7 +408,7 @@ static  FSDBMaster *_currentMaster;
     return count;
 }
 
-- (BOOL)checkTableExist:(NSString *)tableName{
+- (BOOL)checkTableExist:(NSString *)tableName {
     if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
         return NO;
     }
@@ -445,7 +436,7 @@ static  FSDBMaster *_currentMaster;
     return success > 0;
 }
 
-- (NSString *)addField:(NSString *)field defaultValue:(NSString *)value toTable:(NSString *)table{
+- (NSString *)addField:(NSString *)field defaultValue:(NSString *)value toTable:(NSString *)table {
     Class _class_NSString = NSString.class;
     BOOL checkField = [field isKindOfClass:_class_NSString] && field.length;
     if (!checkField) {
@@ -482,7 +473,7 @@ static  FSDBMaster *_currentMaster;
     return error;
 }
 
-- (NSString *)dropTable:(NSString *)table{
+- (NSString *)dropTable:(NSString *)table {
     if (!([table isKindOfClass:NSString.class] && table.length)) {
         return @"表名为空";
     }
@@ -491,7 +482,7 @@ static  FSDBMaster *_currentMaster;
     return error;
 }
 
-- (BOOL)checkTableExistWithTableNamed:(NSString *)tableName{
+- (BOOL)checkTableExistWithTableNamed:(NSString *)tableName {
     if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
         return NO;
     }
@@ -538,7 +529,7 @@ int checkTableCallBack(void *param, int f_num, char **f_value, char **f_name){
 }
 
 // 要返回一条数据中的所有字段及其值
-- (NSDictionary *)dictionaryFromStmt:(sqlite3_stmt *)stmt{
+- (NSDictionary *)dictionaryFromStmt:(sqlite3_stmt *)stmt {
     NSMutableDictionary *last = [[NSMutableDictionary alloc] init];
     int count = sqlite3_column_count(stmt);
     static NSString *noLenghthString = @"";
@@ -581,7 +572,7 @@ int checkTableCallBack(void *param, int f_num, char **f_value, char **f_name){
 //获取表中所有字段名和类型
 static NSString     *_field_name = @"field_name";
 static NSString     *_field_type = @"field_type";
-- (NSArray<NSDictionary *> *)allFields:(NSString *)tableName{
+- (NSArray<NSDictionary *> *)allFields:(NSString *)tableName {
     __block NSMutableArray *array = nil;
     dispatch_sync(_queue, ^{
         array = [[NSMutableArray alloc] init];
@@ -601,7 +592,7 @@ static NSString     *_field_type = @"field_type";
     return [array copy];
 }
 
-- (NSArray<NSString *> *)allTables{
+- (NSArray<NSString *> *)allTables {
     NSArray *array = [self allTablesDetail];
     NSMutableArray *names = nil;
     if ([array isKindOfClass:NSArray.class] && array.count) {
@@ -616,7 +607,7 @@ static NSString     *_field_type = @"field_type";
     return [names copy];
 }
 
-- (NSArray<NSDictionary *> *)allTablesDetail{
+- (NSArray<NSDictionary *> *)allTablesDetail {
     __block NSMutableArray *array = nil;
     dispatch_sync(_queue, ^{
         array = [[NSMutableArray alloc] init];
@@ -635,7 +626,7 @@ static NSString     *_field_type = @"field_type";
     return array.count?array:nil;
 }
 
-- (NSArray<NSString *> *)keywords{
+- (NSArray<NSString *> *)keywords {
     static NSArray *list = nil;
     if (!list) {
         list = @[@"select",@"insert",@"update",@"delete",@"from",@"creat",@"where",@"desc",@"order",@"by",@"group",@"table",@"alter",@"view",@"index",@"when",@"on"];
@@ -643,7 +634,7 @@ static NSString     *_field_type = @"field_type";
     return list;
 }
 
-+ (int)sqlite3_threadsafe{
++ (int)sqlite3_threadsafe {
     return sqlite3_threadsafe();
 }
 

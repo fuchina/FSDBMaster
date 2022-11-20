@@ -19,7 +19,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 //+ (void)setBundleFile:(NSString *_Nullable)fileName;
 
 // 打开数据库，传入数据库路径
-+ (FSDBMaster *_Nullable)openSQLite3:(NSString *_Nullable)path;
++ (BOOL)openSQLite3:(NSString *_Nullable)path;
 
 /**
  * 打开默认数据库
