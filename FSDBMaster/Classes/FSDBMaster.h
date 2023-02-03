@@ -33,7 +33,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
  新增 eg.
  @"INSERT INTO %@ (a,b,c,d) VALUES ('%@','%@','%@','%@');";
  */
-- (NSString *_Nullable)insertSQL:(NSString *_Nullable)sql;  // 不稳定的方法，如果参数中带'符号，可能失败，使用insert_fields_values:table:方法
+- (NSString *_Nullable)insertSQL:(NSString *_Nullable)sql;  // 不稳定的方法，如果参数中带'符号，会失败，使用insert_fields_values:table:方法
 - (NSString *_Nullable)insert_fields_values:(NSDictionary<NSString *,id> *_Nullable)list table:(NSString *_Nullable)table;
 
 /*
@@ -45,7 +45,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 - (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)table aid:(NSNumber *_Nonnull)aid;
 
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
-- (NSString *_Nullable)updateSQL:(NSString *_Nonnull)sql; // 不稳定的方法，如果参数中带'符号，可能失败，使用updateTable:fvs:where方法
+- (NSString *_Nullable)updateSQL:(NSString *_Nonnull)sql; // 不稳定的方法，如果参数中带'符号，会失败，使用updateTable:fvs:where方法
 - (NSString *_Nullable)updateTable:(NSString *_Nonnull)table fvs:(NSDictionary *_Nonnull)fvs where:(NSString *_Nonnull)format, ...;
 
 /**

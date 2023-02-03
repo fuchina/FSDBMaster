@@ -289,26 +289,30 @@
 - (NSString *)updateTable:(NSString *)table fvs:(NSDictionary *)fvs where:(NSString *)format, ... {
     NSAssert([fvs isKindOfClass:NSDictionary.class] && fvs.count, @"updateTable fvs 参数不对");
     NSAssert([table isKindOfClass:NSString.class] && table.length, @"updateTable table 参数不对");
-    
-    NSArray *keys = [fvs allKeys];
-    NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"UPDATE %@ SET ", table];
-    NSInteger lastIndex = keys.count - 1;
-    for (int x = 0; x < keys.count; x ++) {
-        NSString *key = keys[x];        
-        if (x == lastIndex) {
-            [sql appendFormat:@"%@ = :%@", key, key];
-        } else {
-            [sql appendFormat:@"%@ = :%@,", key, key];
-        }
-    }
-    
+
     va_list ap;
     va_start(ap, format);
     NSString *where = [[NSString alloc] initWithFormat:format arguments:ap];
     va_end(ap);
     
-    NSString *full_sql = [[NSString alloc] initWithFormat:@"%@ WHERE %@;", sql, where];
-    return [self exectUpdate:full_sql fieldValues:fvs];
+    __block NSString *outErrorMsg = nil;
+    dispatch_sync(_queue, ^{   // 仍然是在主队列执行
+        NSArray *keys = [fvs allKeys];
+        NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"UPDATE %@ SET ", table];
+        NSInteger lastIndex = keys.count - 1;
+        for (int x = 0; x < keys.count; x ++) {
+            NSString *key = keys[x];
+            if (x == lastIndex) {
+                [sql appendFormat:@"%@ = :%@", key, key];
+            } else {
+                [sql appendFormat:@"%@ = :%@,", key, key];
+            }
+        }
+        
+        NSString *full_sql = [[NSString alloc] initWithFormat:@"%@ WHERE %@;", sql, where];
+        outErrorMsg = [self exectUpdate:full_sql fieldValues:fvs];
+    });
+    return outErrorMsg;
 }
 
 /*
