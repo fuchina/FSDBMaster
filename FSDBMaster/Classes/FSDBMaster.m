@@ -226,36 +226,44 @@
         }
         NSString *insert_sql = [[NSString alloc] initWithFormat:@"INSERT INTO %@ (%@) VALUES (%@);",table,fies,whys];
 
-        sqlite3_stmt *stmt;
-        if (sqlite3_prepare_v2(_sqlite3, insert_sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
-            Class _class_NSString = NSString.class;
-            for (NSString *k in keys) {
-                NSString *nk = [[NSString alloc] initWithFormat:@":%@",k];
-                const char *kc = nk.UTF8String;
-                int idx = sqlite3_bind_parameter_index(stmt, kc);
-                if (idx > 0) {
-                    NSString *v = [list objectForKey:k];
-                    if (![v isKindOfClass:_class_NSString]) {
-                        v = v.description;
-                    }
-                    sqlite3_bind_text(stmt, idx, v.UTF8String, -1, SQLITE_STATIC);
-                }else{
-                    NSAssert(idx > 0, @"idx <= 0");
-                }
-            }
-        }
-        
-        int result = sqlite3_step(stmt);
-        if (result != SQLITE_DONE) {
-            sqlite3_finalize(stmt);stmt = NULL;
-            outErrorMsg = [[NSString alloc] initWithFormat:@"%@ : insertSQL: sqlite3_step(stmt) failed:%@", table, insert_sql];
-        }
+        outErrorMsg = [self exectUpdate:insert_sql fieldValues:list];
     });
     
     if (outErrorMsg) {
         return outErrorMsg;
     }
     return nil;
+}
+
+- (NSString *)exectUpdate:(NSString *)sql fieldValues:(NSDictionary *)fieldValues {
+    NSString *outErrorMsg = nil;
+    sqlite3_stmt *stmt;
+    if (sqlite3_prepare_v2(_sqlite3, sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
+        NSArray *keys = [fieldValues allKeys];
+        
+        Class _class_NSString = NSString.class;
+        for (NSString *k in keys) {
+            NSString *nk = [[NSString alloc] initWithFormat:@":%@",k];
+            const char *kc = nk.UTF8String;
+            int idx = sqlite3_bind_parameter_index(stmt, kc);
+            if (idx > 0) {
+                NSString *v = [fieldValues objectForKey:k];
+                if (![v isKindOfClass:_class_NSString]) {
+                    v = v.description;
+                }
+                sqlite3_bind_text(stmt, idx, v.UTF8String, -1, SQLITE_STATIC);
+            }else{
+                NSAssert(idx > 0, @"idx <= 0");
+            }
+        }
+    }
+    
+    int result = sqlite3_step(stmt);
+    if (result != SQLITE_DONE) {
+        sqlite3_finalize(stmt);stmt = NULL;
+        outErrorMsg = [[NSString alloc] initWithFormat:@"exectUpdate failed: %@", sql];
+    }
+    return outErrorMsg;
 }
 
 - (NSString *)deleteSQL:(NSString *)sql {
@@ -277,41 +285,30 @@
 - (NSString *)updateSQL:(NSString *)sql {
     return [self execSQL:sql];
 }
-
-- (NSString *)joinSqlForUpdate:(NSDictionary *)dic table:(NSString *)table {
-    if (![dic isKindOfClass:NSDictionary.class]) {
-        return nil;
-    }
     
-    NSArray *keys = [dic allKeys];
+- (NSString *)updateTable:(NSString *)table fvs:(NSDictionary *)fvs where:(NSString *)format, ... {
+    NSAssert([fvs isKindOfClass:NSDictionary.class] && fvs.count, @"updateTable fvs 参数不对");
+    NSAssert([table isKindOfClass:NSString.class] && table.length, @"updateTable table 参数不对");
+    
+    NSArray *keys = [fvs allKeys];
     NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"UPDATE %@ SET ", table];
     NSInteger lastIndex = keys.count - 1;
     for (int x = 0; x < keys.count; x ++) {
-        NSString *key = keys[x];
-        NSString *value = [dic objectForKey:key];
-        
+        NSString *key = keys[x];        
         if (x == lastIndex) {
-            [sql appendFormat:@"%@ = '%@'", key, value];
+            [sql appendFormat:@"%@ = :%@", key, key];
         } else {
-            [sql appendFormat:@"%@ = '%@',", key, value];
+            [sql appendFormat:@"%@ = :%@,", key, key];
         }
     }
-    return sql.copy;
-}
-
-- (NSString *)execSQL:(NSString *)SQL type:(NSString *)type {
-    if (!([SQL isKindOfClass:NSString.class] && SQL.length)) {
-        return @"语句为空";
-    }
-    __block NSString *errMSG = nil;
-    dispatch_sync(_queue, ^{
-        char *error = NULL;
-        int result = sqlite3_exec(self->_sqlite3, [SQL UTF8String], NULL, NULL, &error);
-        if (result != SQLITE_OK) {
-            errMSG = [[NSString alloc] initWithFormat:@"%@失败，原因:%s",type,error];
-        }
-    });
-    return errMSG;
+    
+    va_list ap;
+    va_start(ap, format);
+    NSString *where = [[NSString alloc] initWithFormat:format arguments:ap];
+    va_end(ap);
+    
+    NSString *full_sql = [[NSString alloc] initWithFormat:@"%@ WHERE %@;", sql, where];
+    return [self exectUpdate:full_sql fieldValues:fvs];
 }
 
 /*
