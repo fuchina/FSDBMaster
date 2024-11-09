@@ -359,17 +359,19 @@
     return nil;
 }
 
-- (int)countForTable:(NSString *)tableName {
-    if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
+- (NSInteger)countForTable:(NSString *)tableName {
+    if (!([tableName isKindOfClass: NSString.class] && tableName.length)) {
         return 0;
     }
-    BOOL exist = [self checkTableExist:tableName];
+    
+    BOOL exist = [self checkTableExist: tableName];
     if (!exist) {
         return 0;
     }
-    __block int count = 0;
+    
+    __block NSInteger count = 0;
     dispatch_sync(_queue, ^{
-        NSString *sql = [[NSString alloc] initWithFormat:@"SELECT COUNT(*) FROM %@;",tableName];
+        NSString *sql = [[NSString alloc] initWithFormat: @"SELECT COUNT(*) FROM %@;",tableName];
         sqlite3_stmt *stmt = nil;
         int prepare = sqlite3_prepare_v2(self->_sqlite3, [sql UTF8String], -1, &stmt, NULL);
         if (prepare != SQLITE_OK) {

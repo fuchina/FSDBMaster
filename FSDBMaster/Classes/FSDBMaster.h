@@ -72,7 +72,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
 - (NSString *_Nullable)dropTable:(NSString *_Nullable)table;
 
 //  获取表名的所有数据数量
-- (int)countForTable:(NSString *_Nullable)tableName;
+- (NSInteger)countForTable:(NSString *_Nullable)tableName;
 
 /*
  根据sql语句获取满足条件的数据数量；count(*)内部可以是*，也可是字段名来限制范围。
