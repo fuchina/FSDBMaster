@@ -418,7 +418,7 @@
     __block NSInteger success = 0;
     dispatch_sync(_queue, ^{
         sqlite3_stmt *statement;
-        NSString *sql = [NSString stringWithFormat:@"SELECT COUNT(*) FROM sqlite_master where type='table' and name='%@';",tableName];
+        NSString *sql = [NSString stringWithFormat: @"SELECT COUNT(*) FROM sqlite_master where type='table' and name='%@';",tableName];
         const char *sql_stmt = [sql UTF8String];
         if (sqlite3_prepare_v2(self->_sqlite3, sql_stmt, -1, &statement, nil) == SQLITE_OK) {
             @try {
@@ -480,30 +480,14 @@
     if (!([table isKindOfClass:NSString.class] && table.length)) {
         return @"表名为空";
     }
-    NSString *sql = [[NSString alloc] initWithFormat:@"DROP TABLE %@;",table];
+    
+    BOOL tableExist = [self checkTableExist: table];
+    if (!tableExist) {
+        return nil;
+    }
+    NSString *sql = [[NSString alloc] initWithFormat: @"DROP TABLE %@;",table];
     NSString *error = [self execSQL:sql];
     return error;
-}
-
-- (BOOL)checkTableExistWithTableNamed:(NSString *)tableName {
-    if (!([tableName isKindOfClass:NSString.class] && tableName.length)) {
-        return NO;
-    }
-    __block BOOL success = NO;
-    dispatch_sync(_queue, ^{
-        char *err;
-        NSString *sql = [NSString stringWithFormat:@"SELECT COUNT(*) FROM sqlite_master where type='table' and name='%@';",tableName];
-        const char *sql_stmt = [sql UTF8String];
-        int result = sqlite3_exec(self->_sqlite3, sql_stmt, checkTableCallBack, (void *)[tableName UTF8String], &err);
-        if(result != SQLITE_OK){
-            return;
-        }
-        
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        NSString *exist = [ud objectForKey:tableName];
-        success = exist.length?YES:NO;
-    });
-    return success;
 }
 
 /*
