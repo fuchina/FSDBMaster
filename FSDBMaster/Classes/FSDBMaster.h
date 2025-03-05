@@ -114,6 +114,12 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
  */
 - (NSString *_Nullable)transactionHandler:(NSInteger)type;
 
+
+/**
+ *  把from表的数据拷贝到to表里
+ */
++ (NSString *_Nullable)copyTable:(NSString *_Nullable)from to:(NSString *_Nullable)to;
+
 @end
 
 

@@ -719,4 +719,22 @@ static NSString     *_field_type = @"field_type";
     return [@"事务操作失败，事务参数类型:" stringByAppendingFormat:@"%ld",(long)type];
 }
 
++ (NSString *)copyTable:(NSString *)from to:(NSString *)to {
+    NSString *sql = [[NSString alloc] initWithFormat: @"SELECT * FROM %@", from];
+    NSArray *list = [FSDBMaster.sharedInstance querySQL: sql tableName: from];
+    
+    NSString *aid = @"aid";
+    for (int x = 0; x < list.count; x ++) {
+        NSMutableDictionary *m = [list[x] mutableCopy];
+        
+        [m removeObjectForKey: aid];
+        
+        NSString *error = [FSDBMaster.sharedInstance insert_fields_values: m table: to];
+        if (error) {
+            return error;
+        }
+    }
+    return nil;
+}
+
 @end
