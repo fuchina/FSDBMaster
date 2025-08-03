@@ -42,7 +42,7 @@ static NSString * _Nullable _db_first_name = @"sql_ling";
  注意time的值，time是字符串，所以要用''来表示，如果time是字符型数字时加不加''都没关系，但如果time是155555.8888之类时，因为那个小数点导致必须加上''才能找到time
  */
 - (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)sql;
-- (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)table aid:(NSNumber *_Nonnull)aid;
+- (NSString *_Nullable)deleteSQL:(NSString *_Nonnull)table aid:(NSInteger)aid;
 
 // @"UPDATE %@ SET lati = '%@',loti = '%@' WHERE aid = %@;"
 - (NSString *_Nullable)updateSQL:(NSString *_Nonnull)sql; // 不稳定的方法，如果参数中带'符号，会失败，使用updateTable:fvs:where方法

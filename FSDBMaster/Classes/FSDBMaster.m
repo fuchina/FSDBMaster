@@ -270,12 +270,14 @@
     return [self execSQL:sql];
 }
 
-- (NSString *)deleteSQL:(NSString *)table aid:(NSNumber *)aid {
-    if (!([table isKindOfClass:NSString.class] && table.length && aid)) {
+- (NSString *)deleteSQL:(NSString *)table aid:(NSInteger)aid {
+    
+    if (!([table isKindOfClass: NSString.class] && table.length && aid)) {
         return @"参数错误";
     }
-    NSString *sql = [[NSString alloc] initWithFormat:@"DELETE FROM %@ WHERE aid = %@;",table,aid];
-    return [self deleteSQL:sql];
+    
+    NSString *sql = [[NSString alloc] initWithFormat:@"DELETE FROM %@ WHERE aid = %ld;", table, aid];
+    return [self deleteSQL: sql];
 }
 
 /*
