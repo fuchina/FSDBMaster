@@ -10,10 +10,10 @@ import Foundation
 import SQLite3
 
 // MARK: - 类型别名
-typealias FSDBMaster = SwiftDBMaster
+//typealias FSDBMaster = SwiftDBMaster
 
 // MARK: - 主类
-class SwiftDBMaster {
+public class SwiftDBMaster {
     
     // MARK: - 属性
     private var sqlite3: OpaquePointer?
@@ -101,7 +101,7 @@ class SwiftDBMaster {
     }
     
     /// 获取共享实例（默认数据库）
-    static func sharedInstance() -> SwiftDBMaster? {
+    public static func sharedInstance() -> SwiftDBMaster? {
         if currentMaster == nil {
             currentMaster = openSQLite3(dbPath())
         }
@@ -165,7 +165,7 @@ class SwiftDBMaster {
     
     /// 插入数据（使用字段-值字典）
     @discardableResult
-    func insert(fieldsValues: [String: Any]?, table: String?) -> String? {
+    public func insert(fieldsValues: [String: Any]?, table: String?) -> String? {
         guard let table = table, !table.isEmpty else {
             return "insertSQL: table name's length is zero"
         }
@@ -218,13 +218,13 @@ class SwiftDBMaster {
     
     /// 更新数据（使用 SQL 语句）
     @discardableResult
-    func updateSQL(_ sql: String?) -> String? {
+    public func updateSQL(_ sql: String?) -> String? {
         return execSQL(sql)
     }
     
     /// 更新数据（使用字段-值字典和条件）
     @discardableResult
-    func updateTable(_ table: String?, fieldsValues: [String: Any]?, where whereClause: String) -> String? {
+    public func updateTable(_ table: String?, fieldsValues: [String: Any]?, where whereClause: String) -> String? {
         guard let table = table, !table.isEmpty else { return "updateTable table 参数不对" }
         guard let fvs = fieldsValues, !fvs.isEmpty else { return "updateTable fvs 参数不对" }
         
@@ -251,7 +251,7 @@ class SwiftDBMaster {
     // MARK: - 查询
     
     /// 查询数据
-    func querySQL(_ sql: String?, tableName: String?) -> [[String: Any]]? {
+    public func querySQL(_ sql: String?, tableName: String?) -> [[String: Any]]? {
         guard let sql = sql, !sql.isEmpty else { return nil }
         guard let tableName = tableName, !tableName.isEmpty else { return nil }
         guard checkTableExist(tableName) else { return nil }
