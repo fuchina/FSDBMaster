@@ -199,13 +199,13 @@ public class SwiftDBMaster {
     
     /// 删除数据（使用 SQL 语句）
     @discardableResult
-    func deleteSQL(_ sql: String?) -> String? {
+    public func deleteSQL(_ sql: String?) -> String? {
         return execSQL(sql)
     }
     
     /// 删除数据（根据 aid）
     @discardableResult
-    func deleteSQL(table: String?, aid: Int?) -> String? {
+    public func deleteSQL(table: String?, aid: Int?) -> String? {
         guard let table = table, !table.isEmpty, let aid = aid else {
             return "参数错误"
         }
@@ -436,7 +436,7 @@ public class SwiftDBMaster {
     // MARK: - 计数
     
     /// 获取表的数据数量
-    func count(forTable tableName: String?) -> Int {
+    public func count(forTable tableName: String?) -> Int {
         guard let tableName = tableName, !tableName.isEmpty else { return 0 }
         guard checkTableExist(tableName) else { return 0 }
         
