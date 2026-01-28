@@ -254,12 +254,21 @@ public class SwiftDBMaster {
     // MARK: - 查询
     
     /// 查询数据
-    public func querySQL(_ sql: String?, tableName: String?) -> [[String: Any]]? {
-        guard let sql = sql, !sql.isEmpty else { return nil }
-        guard let tableName = tableName, !tableName.isEmpty else { return nil }
-        guard checkTableExist(tableName) else { return nil }
+    public func querySQL(_ sql: String?, tableName: String?) -> [[String: Any]] {
+       
+        guard let sql = sql, !sql.isEmpty else {
+            return []
+        }
         
-        var results: [[String: Any]]?
+        guard let tableName = tableName, !tableName.isEmpty else {
+            return []
+        }
+        
+        guard checkTableExist(tableName) else {
+            return []
+        }
+        
+        var results: [[String: Any]] = []
         queue.sync {
             var stmt: OpaquePointer?
             let prepare = sqlite3_prepare_v2(sqlite3, sql, -1, &stmt, nil)
@@ -277,7 +286,8 @@ public class SwiftDBMaster {
             }
             
             sqlite3_finalize(stmt)
-            results = array.isEmpty ? nil : array
+            
+            results = array
         }
         
         return results
