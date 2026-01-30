@@ -577,31 +577,60 @@ public class SwiftDBMaster {
     // MARK: - 辅助方法
     
     /// 执行更新操作（带参数绑定）
+//    private func executeUpdate(_ sql: String, fieldValues: [String: Any]) -> String? {
+//        var stmt: OpaquePointer?
+//        
+//        guard sqlite3_prepare_v2(sqlite3, sql, -1, &stmt, nil) == SQLITE_OK else {
+//            return "prepare failed"
+//        }
+//        
+//        // 绑定参数
+//        for (key, value) in fieldValues {
+//            let paramName = ":\(key)"
+//            let idx = sqlite3_bind_parameter_index(stmt, paramName)
+//            
+//            if idx > 0 {
+//                let valueStr = "\(value)"
+//                sqlite3_bind_text(stmt, idx, valueStr, -1, nil)
+//            }
+//        }
+//        
+//        let result = sqlite3_step(stmt)
+//        sqlite3_finalize(stmt)
+//        
+//        if result != SQLITE_DONE {
+//            return "executeUpdate failed (\(result)): \(sql)"
+//        }
+//        
+//        return nil
+//    }
+    
     private func executeUpdate(_ sql: String, fieldValues: [String: Any]) -> String? {
         var stmt: OpaquePointer?
-        
+
         guard sqlite3_prepare_v2(sqlite3, sql, -1, &stmt, nil) == SQLITE_OK else {
             return "prepare failed"
         }
-        
-        // 绑定参数
+
+        let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+
         for (key, value) in fieldValues {
             let paramName = ":\(key)"
             let idx = sqlite3_bind_parameter_index(stmt, paramName)
-            
+
             if idx > 0 {
                 let valueStr = "\(value)"
-                sqlite3_bind_text(stmt, idx, valueStr, -1, nil)
+                sqlite3_bind_text(stmt, idx, valueStr, -1, SQLITE_TRANSIENT)
             }
         }
-        
+
         let result = sqlite3_step(stmt)
         sqlite3_finalize(stmt)
-        
+
         if result != SQLITE_DONE {
             return "executeUpdate failed (\(result)): \(sql)"
         }
-        
+
         return nil
     }
     
