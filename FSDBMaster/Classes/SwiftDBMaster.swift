@@ -253,7 +253,12 @@ public class SwiftDBMaster {
     
     // MARK: - 查询
     
-    /// 查询数据
+    /*
+     【SELECT DISTINCT name FROM %@;】// 从%@表中查询name字段的所有不重复的值
+     【SELECT * FROM %@ WHERE name = 'ddd';】
+     【SELECT * FROM %@ order by time DESC limit 0,10;】    ASC
+     【SELECT * FROM %@ WHERE atype = ? OR btype = ? and time BETWEEN 1483228800 AND 1514764799 order by time DESC limit 0,10;】
+     */
     public func querySQL(_ sql: String?, tableName: String?) -> [[String: Any]] {
        
         guard let sql = sql, !sql.isEmpty else {
