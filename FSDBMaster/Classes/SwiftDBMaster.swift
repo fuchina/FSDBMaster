@@ -301,7 +301,7 @@ public class FSDBMaster {
     // MARK: - 表操作
     
     /// 检查表是否存在
-    func checkTableExist(_ tableName: String?) -> Bool {
+    public func checkTableExist(_ tableName: String?) -> Bool {
         guard let tableName = tableName, !tableName.isEmpty else { return false }
         
         var exists = false
