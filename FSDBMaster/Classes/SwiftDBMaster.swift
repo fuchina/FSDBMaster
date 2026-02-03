@@ -13,7 +13,7 @@ import SQLite3
 //typealias FSDBMaster = SwiftDBMaster
 
 // MARK: - 主类
-public class SwiftDBMaster {
+public class FSDBMaster {
     
     // MARK: - 属性
     private var sqlite3: OpaquePointer?
