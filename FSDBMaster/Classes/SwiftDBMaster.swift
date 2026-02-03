@@ -357,7 +357,7 @@ public class FSDBMaster {
     
     /// 删除表
     @discardableResult
-    func dropTable(_ table: String?) -> String? {
+    public func dropTable(_ table: String?) -> String? {
         guard let table = table, !table.isEmpty else { return "表名为空" }
         
         let sql = "DROP TABLE \(table);"
