@@ -22,8 +22,8 @@ public class FSDBMaster {
     // MARK: - 静态属性
     private static let dbExtension = ".db"
     private static let dbFirstName = "sql_ling"
-    private static var defaultMaster: SwiftDBMaster?
-    private static var currentMaster: SwiftDBMaster?
+    private static var defaultMaster: FSDBMaster?
+    private static var currentMaster: FSDBMaster?
     private static let initQueue = DispatchQueue(label: "swiftdbmaster.sync")
     
     // MARK: - 初始化
@@ -42,7 +42,7 @@ public class FSDBMaster {
     private init?(path: String) {
         guard !path.isEmpty else { return nil }
         
-        self.queue = SwiftDBMaster.initQueue
+        self.queue = FSDBMaster.initQueue
         
         var success = false
         queue.sync {
@@ -52,7 +52,7 @@ public class FSDBMaster {
         guard success else { return nil }
         
         #if DEBUG
-        let mode = SwiftDBMaster.sqlite3Threadsafe()
+        let mode = FSDBMaster.sqlite3Threadsafe()
         assert(mode == 2, "SQLite3线程模式不是2")
         #endif
     }
@@ -86,13 +86,13 @@ public class FSDBMaster {
     // MARK: - 静态方法
     
     /// 打开指定路径的数据库
-    static func openSQLite3(_ path: String?) -> SwiftDBMaster? {
+    static func openSQLite3(_ path: String?) -> FSDBMaster? {
         
         guard let path = path, !path.isEmpty else { return nil }
         
         // 初始化默认数据库
         if defaultMaster == nil {
-            defaultMaster = SwiftDBMaster(path: dbPath())
+            defaultMaster = FSDBMaster(path: dbPath())
         }
         
         // 如果是默认路径，返回默认实例
@@ -100,11 +100,11 @@ public class FSDBMaster {
             return defaultMaster
         }
         
-        return SwiftDBMaster(path: path)
+        return FSDBMaster(path: path)
     }
     
     /// 获取共享实例（默认数据库）
-    public static func sharedInstance() -> SwiftDBMaster? {
+    public static func sharedInstance() -> FSDBMaster? {
         if currentMaster == nil {
             currentMaster = openSQLite3(dbPath())
         }
