@@ -476,7 +476,7 @@ public class FSDBMaster {
     }
     
     /// 根据 SQL 获取数据数量
-    func count(withSQL sql: String?, table: String?) -> Int {
+    public func count(withSQL sql: String?, table: String?) -> Int {
         guard let sql = sql, !sql.isEmpty else { return 0 }
         guard let table = table, !table.isEmpty else { return 0 }
         guard checkTableExist(table) else { return 0 }
