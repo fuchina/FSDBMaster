@@ -366,7 +366,7 @@ public class FSDBMaster {
     
     /// 添加字段到表
     @discardableResult
-    func addField(_ field: String?, defaultValue: String?, toTable table: String?) -> String? {
+    public func addField(_ field: String?, defaultValue: String?, toTable table: String?) -> String? {
         guard let field = field, !field.isEmpty else { return "字段不是字符串" }
         guard let table = table, !table.isEmpty else { return "表名错误" }
         
