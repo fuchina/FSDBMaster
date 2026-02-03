@@ -135,7 +135,7 @@ public class FSDBMaster {
     
     /// 执行 SQL 语句
     @discardableResult
-    func execSQL(_ sql: String?) -> String? {
+    public func execSQL(_ sql: String?) -> String? {
         guard let sql = sql, !sql.isEmpty else { return "SQL语句为空" }
         
         var errorMsg: String?
@@ -421,7 +421,7 @@ public class FSDBMaster {
     }
     
     /// 获取表的所有字段
-    func allFields(_ tableName: String?) -> [[String: Any]]? {
+    public func allFields(_ tableName: String?) -> [[String: Any]]? {
         guard let tableName = tableName, !tableName.isEmpty else { return nil }
         
         var results: [[String: Any]]?
@@ -682,7 +682,7 @@ public class FSDBMaster {
     }
     
     /// SQL 关键字列表
-    func keywords() -> [String] {
+    public func keywords() -> [String] {
         return ["select", "insert", "update", "delete", "from", "creat", "where", "desc", "order", "by", "group", "table", "alter", "view", "index", "when", "on"]
     }
 }
