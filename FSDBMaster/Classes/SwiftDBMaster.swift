@@ -112,7 +112,7 @@ public class FSDBMaster {
     }
     
     /// 默认数据库路径
-    static func dbPath() -> String {
+    public static func dbPath() -> String {
         return dbPath(withFileName: dbFirstName)
     }
     
@@ -391,7 +391,7 @@ public class FSDBMaster {
     }
     
     /// 获取所有表名
-    func allTables() -> [String]? {
+    public func allTables() -> [String]? {
         guard let details = allTablesDetail() else { return nil }
         
         return details.compactMap { $0["name"] as? String }
