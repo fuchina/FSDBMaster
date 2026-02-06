@@ -167,14 +167,13 @@ public class FSDBMaster {
     }
     
     /// 插入数据（使用字段-值字典）
-    @discardableResult
-    public func insert(fieldsValues: [String: Any]?, table: String?) -> String? {
+    public func insert(fieldsValues: [String: Any]?, table: String?) -> String {
         guard let table = table, !table.isEmpty else {
             return "insertSQL: table name's length is zero"
         }
         
         guard let list = fieldsValues, !list.isEmpty else {
-            return nil
+            return ""
         }
         
         let keys = Array(list.keys)
@@ -186,7 +185,7 @@ public class FSDBMaster {
             }
         }
         
-        var outErrorMsg: String?
+        var outErrorMsg: String = ""
         queue.sync {
             let fields = keys.joined(separator: ",")
             let placeholders = keys.map { ":\($0)" }.joined(separator: ",")
@@ -227,11 +226,11 @@ public class FSDBMaster {
     
     /// 更新数据（使用字段-值字典和条件）
     @discardableResult
-    public func updateTable(_ table: String?, fieldsValues: [String: Any]?, where whereClause: String) -> String? {
+    public func updateTable(_ table: String?, fieldsValues: [String: Any]?, where whereClause: String) -> String {
         guard let table = table, !table.isEmpty else { return "updateTable table 参数不对" }
         guard let fvs = fieldsValues, !fvs.isEmpty else { return "updateTable fvs 参数不对" }
         
-        var outErrorMsg: String?
+        var outErrorMsg: String = ""
         queue.sync {
             let keys = Array(fvs.keys)
             var sqlParts: [String] = []
@@ -610,7 +609,7 @@ public class FSDBMaster {
 //        return nil
 //    }
     
-    private func executeUpdate(_ sql: String, fieldValues: [String: Any]) -> String? {
+    private func executeUpdate(_ sql: String, fieldValues: [String: Any]) -> String {
         var stmt: OpaquePointer?
 
         guard sqlite3_prepare_v2(sqlite3, sql, -1, &stmt, nil) == SQLITE_OK else {
@@ -636,7 +635,7 @@ public class FSDBMaster {
             return "executeUpdate failed (\(result)): \(sql)"
         }
 
-        return nil
+        return ""
     }
     
     /// 从 statement 中提取字典
