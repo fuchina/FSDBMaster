@@ -207,7 +207,7 @@ public class FSDBMaster {
     
     /// 删除数据（根据 aid）
     @discardableResult
-    public func deleteSQL(table: String?, aid: Int?) -> String? {
+    public func deleteSQL(table: String?, aid: Int?) -> String {
         guard let table = table, !table.isEmpty, let aid = aid else {
             return "参数错误"
         }
