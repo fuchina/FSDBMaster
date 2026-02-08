@@ -533,7 +533,7 @@ public class FSDBMaster {
     
     /// 存储二进制数据
     @discardableResult
-    func insertData(_ data: Data, table: String, key: String) -> String? {
+    func insertData(_ data: Data, table: String, key: String) -> String {
         guard !table.isEmpty else { return "表名为空" }
         guard !key.isEmpty else { return "key为空" }
         
@@ -547,7 +547,8 @@ public class FSDBMaster {
         } else {
             // 创建表
             let createTable = "CREATE TABLE IF NOT EXISTS \(table) (aid INTEGER PRIMARY KEY autoincrement,tm TEXT,ky TEXT,dt BLOB);"
-            if let error = execSQL(createTable) {
+            let error = execSQL(createTable)
+            if !error.isEmpty {
                 return error
             }
         }
@@ -575,7 +576,7 @@ public class FSDBMaster {
             sqlite3_finalize(stmt)
         }
         
-        return nil
+        return ""
     }
     
     // MARK: - 辅助方法
