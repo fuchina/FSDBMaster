@@ -135,7 +135,7 @@ public class FSDBMaster {
     
     /// 执行 SQL 语句
     @discardableResult
-    public func execSQL(_ sql: String?) -> String? {
+    public func execSQL(_ sql: String?) -> String {
         guard let sql = sql, !sql.isEmpty else { return "SQL语句为空" }
         
         var errorMsg: String?
@@ -155,7 +155,7 @@ public class FSDBMaster {
             sqlite3_finalize(stmt)
         }
         
-        return errorMsg
+        return errorMsg ?? ""
     }
     
     // MARK: - 插入
@@ -201,7 +201,7 @@ public class FSDBMaster {
     
     /// 删除数据（使用 SQL 语句）
     @discardableResult
-    public func deleteSQL(_ sql: String?) -> String? {
+    public func deleteSQL(_ sql: String?) -> String {
         return execSQL(sql)
     }
     
