@@ -220,7 +220,7 @@ public class FSDBMaster {
     
     /// 更新数据（使用 SQL 语句）
     @discardableResult
-    public func updateSQL(_ sql: String?) -> String? {
+    public func updateSQL(_ sql: String?) -> String {
         return execSQL(sql)
     }
     
