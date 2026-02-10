@@ -502,7 +502,7 @@ public class FSDBMaster {
     /// - Parameter type: 1=开始事务, 2=提交事务, 3=回滚事务
     /// - Returns: 错误信息，nil 表示成功
     @discardableResult
-    func transactionHandler(_ type: Int) -> String? {
+    public func transactionHandler(_ type: Int) -> String {
         let sql: String
         switch type {
         case 1:
@@ -519,7 +519,7 @@ public class FSDBMaster {
         let result = sqlite3_exec(sqlite3, sql, nil, nil, &errorMsg)
         
         if result == SQLITE_OK {
-            return nil
+            return ""
         }
         
         if let error = errorMsg {
