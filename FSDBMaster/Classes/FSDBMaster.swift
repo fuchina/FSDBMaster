@@ -180,7 +180,7 @@ public class FSDBMaster {
         
         // 检查表是否存在
         if !checkTableExist(table) {
-            if let error = createTableIfNotExists(table, fields: keys) {
+            if let error = createTableIfNotExists(table, fields: keys), !error.isEmpty {
                 return error
             }
         }
