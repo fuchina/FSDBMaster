@@ -104,13 +104,23 @@ public class FSDBMaster {
     }
     
     /// 获取共享实例（默认数据库）
-    public static func sharedInstance() -> FSDBMaster? {
+    public static func sharedInstance2() -> FSDBMaster? {
         if currentMaster == nil {
             currentMaster = openSQLite3(dbPath())
         }
         return currentMaster
     }
     
+    /// 获取共享实例（默认数据库）
+    public static func sharedInstance() -> FSDBMaster {
+        let m = self.sharedInstance2()
+        if let m {
+            return m
+        }
+        
+        fatalError()
+    }
+        
     /// 默认数据库路径
     public static func dbPath() -> String {
         return dbPath(withFileName: dbFirstName)
