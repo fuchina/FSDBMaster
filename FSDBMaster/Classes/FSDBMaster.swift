@@ -369,7 +369,7 @@ public class FSDBMaster {
     public func dropTable(_ table: String?) -> String {
         guard let table = table, !table.isEmpty else { return "表名为空" }
         
-        let sql = "DROP TABLE \(table);"
+        let sql = "DROP TABLE IF EXISTS \(table);"
         return execSQL(sql)
     }
     
