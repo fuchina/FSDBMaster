@@ -399,7 +399,7 @@ public class FSDBMaster {
         return execSQL(sql)
     }
     
-    public func copyTable(_ table: String, toTable: String) -> String {
+    public func copyTable(_ table: String, toTable: String, quits: [String]) -> String {
         
         let sql = "SELECT * FROM \(table)"
         let list = self.querySQL(sql, tableName: table)
@@ -409,6 +409,10 @@ public class FSDBMaster {
         
         for var obj in list {
             obj.removeValue(forKey: "aid")
+            
+            for m in quits {
+                obj.removeValue(forKey: m)
+            }
                         
             let error = self.insert(fieldsValues: obj, table: toTable)
             if error.isEmpty == false {
