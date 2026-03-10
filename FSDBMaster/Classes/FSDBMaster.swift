@@ -399,6 +399,26 @@ public class FSDBMaster {
         return execSQL(sql)
     }
     
+    public func copyTable(_ table: String, toTable: String) -> String {
+        
+        let sql = "SELECT * FROM \(table)"
+        let list = self.querySQL(sql, tableName: table)
+        if list.count == 0 {
+            return ""
+        }
+        
+        for var obj in list {
+            obj.removeValue(forKey: "aid")
+                        
+            let error = self.insert(fieldsValues: obj, table: toTable)
+            if error.isEmpty == false {
+                return error
+            }
+        }
+        
+        return ""
+    }
+    
     /// 获取所有表名
     public func allTables() -> [String]? {
         guard let details = allTablesDetail() else { return nil }
