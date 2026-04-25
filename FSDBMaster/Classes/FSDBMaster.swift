@@ -126,6 +126,15 @@ public class FSDBMaster {
         return dbPath(withFileName: dbFirstName)
     }
     
+    /// 备份数据库文件路径（与当前数据库同级，用于上传快照）
+    /// 上传前拷贝当前库到此路径，上传的是静态快照，不会因原库变化而失败
+    public static func backups() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        guard let docDir = paths.first else { return "" }
+        
+        return (docDir as NSString).appendingPathComponent("sql_ling_upload.db")
+    }
+    
     /// 根据文件名生成数据库路径
     static func dbPath(withFileName name: String) -> String {
         guard !name.isEmpty else { return "" }
